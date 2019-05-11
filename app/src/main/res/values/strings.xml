@@ -1,0 +1,101 @@
+<resources>
+    //所有的布局文件里面的内容都在设个文件中设置名字和键值索引（规范）
+    <string name="app_name">摩米实验室</string>
+    <string name="tab1">检测</string>
+    <string name="tab2">使用教程</string>
+    <string name="tab3">小知识</string>
+    <string name="tab4">我的</string>
+    //检测项目
+    <string name="ProjectsName">项目名称</string>
+    <string name="NormalValues">正常值范围</string>
+    <string name="TestResults">检测结果</string>
+    <string name="TestContents">检测含量</string>
+    //检测的类别 12项
+    <string name="TestURO">尿胆原</string>
+    <string name="TestBIL">胆红素</string>
+    <string name="TestKET">胴体</string>
+    <string name="TestCr">肌酐</string>
+    <string name="TestBLD">血</string>
+    <string name="TestPRO">蛋白质</string>
+    <string name="TestMA">微白蛋白</string>
+    <string name="TestNIT">亚硝酸盐</string>
+    <string name="TestLEU">白细胞</string>
+    <string name="TestGLU">葡萄糖</string>
+    <string name="TestSG">比重</string>
+    <string name="TestPH">酸碱度</string>
+    <string name="TestVC">抗坏血酸</string>
+    <string name="TestUca">尿钙</string>
+
+    //正常值范围 12项
+    <string name="Normal_1"><![CDATA[<=3.4umol/L]]></string>
+    <string name="Normal_2"><![CDATA[<=17umol/L]]></string>
+    <string name="Normal_3"><![CDATA[<=0.5mmol/L]]></string>
+    <string name="Normal_4"><![CDATA[<=10 CELLS/uL]]></string>
+    <string name="Normal_5"><![CDATA[<=0.2g/L]]></string>
+    <string name="Normal_6"><![CDATA[<=18umol/L]]></string>
+    <string name="Normal_7"><![CDATA[<=15 CELLS/uL]]></string>
+    <string name="Normal_8"><![CDATA[<=5.6mmol/L]]></string>
+    <string name="Normal_9">1.005~1.030</string>
+    <string name="Normal_10">5.0~9.0</string>
+    <string name="Normal_11">1umol/L</string>
+    <string name="Normal_12">1umol/L</string>
+    //检测结果的级数 12项
+    <string name="ResultValue1">第1级</string>
+    <string name="ResultValue2">第2级</string>
+    <string name="ResultValue3">第3级</string>
+    <string name="ResultValue4">第4级</string>
+    <string name="ResultValue5">第5级</string>
+    <string name="ResultValue6">第6级</string>
+    <string name="ResultValue7">第7级</string>
+    <string name="ResultValue8">第8级</string>
+    <string name="ResultValue9">第9级</string>
+    <string name="ResultValue10">第10级</string>
+    <string name="ResultValue11">第11级</string>
+    <string name="ResultValue12">第12级</string>
+    <string name="ResultValue13">第13级</string>
+    <string name="ResultValue14">第14级</string>
+    //检测出的含量 12项
+    <string name="TestContent1">3umol/L</string>
+    <string name="TestContent2">5umol/L</string>
+    <string name="TestContent3">2.5umol/L</string>
+    <string name="TestContent4">5 CELLS/uL</string>
+    <string name="TestContent5">0.1g/L</string>
+    <string name="TestContent6">3.5umol/L</string>
+    <string name="TestContent7">10 CELLS/uL</string>
+    <string name="TestContent8">1.2mmol/L</string>
+    <string name="TestContent9">1.008</string>
+    <string name="TestContent10">7.0</string>
+    <string name="TestContent11">3umol/L</string>
+    <string name="TestContent12">3umol/L</string>
+    //第一个界面的按钮值
+    <string name="TestStart">检测</string>
+    <string name="ServersOnline">在线客服</string>
+    <string name="TestRecord">检测记录</string>
+    <string name="testRecord">显示检测记录</string>
+    <string name="ProcessResults">处理和结果显示</string>
+    <string name="changevalues">ChangeValues</string>
+    <string name="cameraon">打开相机拍照并保存</string>
+    <string name="ShowResults">处理并显示结果</string>
+    //第二个界面的按钮值
+    <string name="TitleTwo">这里是使用教程的页面</string>
+    <string name="StepOne">第一步</string>
+    <string name="StepTwo">第二步</string>
+    <string name="StepThree">第三步</string>
+    <string name="StepFour">第四步</string>
+    //第三个界面的按钮值
+    <string name="littleKnowledge">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;尿液：人类尿液形成是血液流经肾小球时，血液中的尿酸、尿素、水、无机盐和葡萄糖等物质通过肾小球的滤过作用，过滤到肾小囊中，形成原尿。
+\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;水原尿的主要成分：水：97%、蛋白质：微量、葡萄糖：0.1、尿素：0.03 %、尿酸：0.004%、无机盐：0.9%。
+\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;尿液的主要成分：水：95 %、蛋白质：0%、葡萄糖 ：0%、尿素 ：1.8 %、尿酸：0.05%、无机盐：1.1%。
+\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;颜色：无色、白色、类盐色、黄色、蓝色、绿色、红色。
+\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;气味：氨味、恶臭味、燃烧硫磺气味、甜水果味、焦糖味。\n\n\n\n\n\n\n\n\n</string>
+    //第四个界面的按钮值
+    <string name="LogIn">登录和注册</string>
+    <string name="Setting">设置</string>
+    <string name="AboutUs">关于我们</string>
+    <string name="aboutUs">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;现代光电测控及仪器实验室由知名光学工程专家叶玉堂教授与2002年组建专注于中国高端光电仪器设备的
+    研制及开发。实验室充分地兼顾相关理论、技术的学术水平和国家军事、民用的实际需求，以“实业报国”为己任，以“每做一个课题，都树一座丰碑、交一方朋友”为准绳，不遗余力地为发展
+    中国光电测控仪器而努力，为赶超国际先进水平而奋斗。\n地址：电子科技大学沙河校区逸夫楼505</string>
+    <string name="myFamily">家庭成员</string>
+    <string name="familyTable">家庭成员列表</string>
+    <string name="vedioTest">视频检测</string>
+</resources>

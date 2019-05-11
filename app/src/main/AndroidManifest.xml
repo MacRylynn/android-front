@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jpeng.demo">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--图标 APP名称-->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+      >
+        <!--每一个Activity的权限 相当于在此处注册每一个Activity-->
+        <activity android:name="com.jpeng.demo.LogInActivity" android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.jpeng.demo.TestActivity" />
+        <activity android:name="com.jpeng.demo.CheckActivity"/>
+        <activity android:name="com.jpeng.demo.MainActivity" android:hardwareAccelerated="true"/>
+        <activity android:name="com.jpeng.demo.SettingActivity"/>
+        <activity android:name="com.jpeng.demo.AboutUsActivity"/>
+        <activity android:name="com.jpeng.demo.TestRecordActivity"/>
+        <activity android:name="com.jpeng.demo.ServiceOnlineActivity"/>
+        <activity android:name="com.jpeng.demo.MyFamilyActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".VedioTestActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="my.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+    </application>
+
+    <!--各种手机权限的获取-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name = "android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

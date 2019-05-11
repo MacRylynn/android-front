@@ -1,0 +1,53 @@
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f4f4f4">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:drawableStart="@mipmap/test"
+        android:text="@string/TestStart"
+        android:textSize="18sp"/>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginTop="148dp"
+        android:background="#FFFFFF"
+        android:drawableLeft="@mipmap/record"
+        android:text="@string/TestRecord"
+        android:textSize="18sp"
+        android:theme="@style/RippleWhite"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignEnd="@+id/button2"
+        android:layout_marginTop="286dp"
+        android:background="#FFFFFF"
+        android:drawableLeft="@mipmap/serviceonline"
+        android:text="@string/ServersOnline"
+        android:textSize="18sp"
+        tools:ignore="RtlHardcoded" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignEnd="@+id/button3"
+        android:layout_marginTop="424dp"
+        android:background="#FFFFFF"
+        android:drawableLeft="@mipmap/test"
+        android:text="@string/vedioTest"
+        android:textSize="18sp"
+        tools:ignore="RtlHardcoded" />
+
+</RelativeLayout>

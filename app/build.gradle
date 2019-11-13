@@ -43,5 +43,5 @@ dependencies {
     implementation files('libs/ffmpeg.jar')
     implementation files('libs/javacpp.jar')
     implementation files('libs/javacv.jar')
-    provided files ('D:/Java/jre/lib/rt.jar')
+    provided files ('D:/Android Studio/jre/jre/lib/rt.jar')
 }

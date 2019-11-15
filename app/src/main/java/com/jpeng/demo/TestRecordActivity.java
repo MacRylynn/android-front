@@ -20,6 +20,8 @@ public class TestRecordActivity extends Activity {
     private MyDatabaseHelper dbHelper;
     private String results = "检测结果：" + "\n";
     private boolean isDisplay = true;
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.testrecord);
@@ -40,13 +42,13 @@ public class TestRecordActivity extends Activity {
                         }
                     } while (cursor.moveToNext());
                 }
-                if(isDisplay){
-                if (!Objects.equals(results, "检测结果：" + "\n")) {
-                    textView.setText(results);
-                    isDisplay = false;
-                } else {
-                    Toast.makeText(TestRecordActivity.this, "您还没有记录,请开启检测", Toast.LENGTH_SHORT).show();
-                }
+                if (isDisplay) {
+                    if (!Objects.equals(results, "检测结果：" + "\n")) {
+                        textView.setText(results);
+                        isDisplay = false;
+                    } else {
+                        Toast.makeText(TestRecordActivity.this, "您还没有记录,请开启检测", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 cursor.close();
             }

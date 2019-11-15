@@ -1,7 +1,6 @@
 package com.jpeng.demo;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ public class VedioTestActivity extends Activity {
     Uri uri = FileProvider.getUriForFile(this, "my.provider", file);
 
 
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vediotest);
@@ -35,7 +33,6 @@ public class VedioTestActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // 保存录像到指定的路径
-
                 try {
                     if (file.exists()) {
                         file.delete();
@@ -60,7 +57,7 @@ public class VedioTestActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(VedioTestActivity.this,"kaiasdasd",Toast.LENGTH_LONG).show();
+                Toast.makeText(VedioTestActivity.this, "kaiasdasd", Toast.LENGTH_LONG).show();
 
             }
         });

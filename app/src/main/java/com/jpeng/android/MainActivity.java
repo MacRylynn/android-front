@@ -1,4 +1,4 @@
-package com.jpeng.demo;
+package com.jpeng.android;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,6 +8,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.jpeng.android.utils.Adapter;
+import com.jpeng.android.utils.Tab1Pager;
+import com.jpeng.android.utils.Tab2Pager;
+import com.jpeng.android.utils.Tab3Pager;
+import com.jpeng.android.utils.Tab4Pager;
 import com.jpeng.jptabbar.BadgeDismissListener;
 import com.jpeng.jptabbar.JPTabBar;
 import com.jpeng.jptabbar.OnTabSelectListener;
@@ -18,7 +23,7 @@ import com.jpeng.jptabbar.anno.Titles;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.jpeng.demo.R.id.tabbar;
+import static com.jpeng.android.R.id.tabbar;
 
 
 public class MainActivity extends AppCompatActivity implements BadgeDismissListener, OnTabSelectListener {

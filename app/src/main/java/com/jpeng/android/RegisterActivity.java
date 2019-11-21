@@ -1,4 +1,4 @@
-package com.jpeng.demo;
+package com.jpeng.android;
 
 import android.app.Activity;
 import android.content.Intent;

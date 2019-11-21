@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jpeng.demo">
+    package="com.jpeng.android">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!--图标 APP名称-->
@@ -12,23 +12,23 @@
         android:theme="@style/AppTheme"
       >
         <!--每一个Activity的权限 相当于在此处注册每一个Activity-->
-        <activity android:name="com.jpeng.demo.LogInActivity" android:launchMode="singleInstance">
+        <activity android:name="com.jpeng.android.LogInActivity" android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.jpeng.demo.TestActivity" />
-        <activity android:name="com.jpeng.demo.CheckActivity"/>
-        <activity android:name="com.jpeng.demo.MainActivity" android:hardwareAccelerated="true"/>
-        <activity android:name="com.jpeng.demo.SettingActivity"/>
-        <activity android:name="com.jpeng.demo.AboutUsActivity"/>
-        <activity android:name="com.jpeng.demo.TestRecordActivity"/>
-        <activity android:name="com.jpeng.demo.ServiceOnlineActivity"/>
-        <activity android:name="com.jpeng.demo.MyFamilyActivity"/>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".VedioTestActivity" />
+        <activity android:name="com.jpeng.android.TestActivity" />
+        <activity android:name="com.jpeng.android.CheckActivity"/>
+        <activity android:name="com.jpeng.android.MainActivity" android:hardwareAccelerated="true"/>
+        <activity android:name="com.jpeng.android.SettingActivity"/>
+        <activity android:name="com.jpeng.android.AboutUsActivity"/>
+        <activity android:name="com.jpeng.android.TestRecordActivity"/>
+        <activity android:name="com.jpeng.android.ServiceOnlineActivity"/>
+        <activity android:name="com.jpeng.android.MyFamilyActivity"/>
+        <activity android:name="com.jpeng.android.RegisterActivity"/>
+        <activity android:name="com.jpeng.android.VedioTestActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

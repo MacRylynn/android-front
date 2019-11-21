@@ -1,38 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f4f4f4"
-    android:orientation="vertical">
+    android:layout_height="wrap_content">
 
-    <TableLayout
-        android:id="@+id/tableLayout2"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#f4f4f4"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:background="#FFFF"
-            android:text="清除缓存" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="340sp"
+            android:layout_height="500sp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="320dp"
+            android:singleLine="false"
+            android:text="@string/littleKnowledge"
+            android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/button2"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50sp"
-            android:background="#FFFF"
-            android:text="重置密码" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50sp"
-            android:background="#FFF"
-            android:text="注销登录"
-            android:textColor="#FF0000" />
-    </TableLayout>
-</RelativeLayout>
+            android:layout_height="300sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/icon3" />
+    </RelativeLayout>
+</ScrollView>

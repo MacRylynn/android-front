@@ -1,4 +1,4 @@
-package com.jpeng.demo;
+package com.jpeng.android;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -28,7 +28,7 @@ public class UriOnlineServiceActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.serviceonline);
+        setContentView(R.layout.onlineservice);
         //点击之后直接拨打号码
         Button btn1 = findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {

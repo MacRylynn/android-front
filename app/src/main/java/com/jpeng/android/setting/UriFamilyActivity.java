@@ -15,6 +15,6 @@ import com.jpeng.android.R;
 public class UriFamilyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.myfamily);
+        setContentView(R.layout.familysetting);
     }
 }

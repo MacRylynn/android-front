@@ -11,9 +11,9 @@ import com.jpeng.android.R;
  * @Author: lijiao73
  * @Date: 2019/11/21 0021 下午 11:04
  */
-public class MyFamilyActivity extends Activity {
+public class UriChoosePersonAvtivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.myfamily);
+        setContentView(R.layout.chooseperson);
     }
 }

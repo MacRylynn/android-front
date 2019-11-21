@@ -45,7 +45,7 @@ public class UriSingleCheckActivity extends Activity  {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.show_results);
+        setContentView(R.layout.singlecheck);
         dbHelper = new MyDatabaseHelper(this, "user_results.db", null, 1);
         //得到用户的名称
 

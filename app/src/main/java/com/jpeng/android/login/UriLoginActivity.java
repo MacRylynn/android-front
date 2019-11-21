@@ -1,4 +1,4 @@
-package com.jpeng.android;
+package com.jpeng.android.login;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -13,7 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.jpeng.android.utils.MainActivity;
+import com.jpeng.android.utils.MyDatabaseHelper;
+import com.jpeng.android.R;
+import com.jpeng.android.utils.system.MainActivity;
 
 import java.io.IOException;
 
@@ -26,10 +28,13 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
- * Created by Administrator on 2018/6/5.
+ * @ClassName UriSingleLogActivity
+ * @Description
+ * @Author: lijiao73
+ * @Date: 2019/11/21 0021 下午 11:04
  */
 
-public class LogInActivity extends Activity {
+public class UriLoginActivity extends Activity {
     private String BaseUrl = "http://120.77.221.43:8082/web/login";
     private EditText editText1;
     private EditText editText2;
@@ -45,7 +50,7 @@ public class LogInActivity extends Activity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogInActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(UriLoginActivity.this, UriRegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -97,9 +102,9 @@ public class LogInActivity extends Activity {
                     if (res.equals("true")) {
                         //在子线程里面显示Toast需要    Looper.prepare(); 和 Looper.loop();
                         Looper.prepare();
-                        Toast.makeText(LogInActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UriLoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                         //跳转到主界面
-                        Intent intent = new Intent(LogInActivity.this, MainActivity.class);
+                        Intent intent = new Intent(UriLoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                         //把传进来的用户数据保存在本地数据库，然后再TestActivity里面获得用户值，然后方便把用户名和检查结果一起上传到后台的数据库
@@ -112,13 +117,13 @@ public class LogInActivity extends Activity {
                         Looper.loop();
                     } else {
                         Looper.prepare();
-                        Toast.makeText(LogInActivity.this, "登录失败，请检查账号密码是否正确", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UriLoginActivity.this, "登录失败，请检查账号密码是否正确", Toast.LENGTH_SHORT).show();
                         Looper.loop();
                     }
                 }
             });
         } else {
-            Toast.makeText(LogInActivity.this, "登录失败，请检查用户名和密码是否正确", Toast.LENGTH_SHORT).show();
+            Toast.makeText(UriLoginActivity.this, "登录失败，请检查用户名和密码是否正确", Toast.LENGTH_SHORT).show();
         }
     }
 }

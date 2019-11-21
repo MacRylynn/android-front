@@ -12,23 +12,22 @@
         android:theme="@style/AppTheme"
       >
         <!--每一个Activity的权限 相当于在此处注册每一个Activity-->
-        <activity android:name="com.jpeng.android.LogInActivity" android:launchMode="singleInstance">
+        <activity android:name="com.jpeng.android.login.UriLoginActivity" android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name="com.jpeng.android.TestActivity" />
-        <activity android:name="com.jpeng.android.CheckActivity"/>
-        <activity android:name="com.jpeng.android.utils.MainActivity" android:hardwareAccelerated="true"/>
-        <activity android:name="com.jpeng.android.SettingActivity"/>
-        <activity android:name="com.jpeng.android.AboutUsActivity"/>
-        <activity android:name="com.jpeng.android.TestRecordActivity"/>
-        <activity android:name="com.jpeng.android.ServiceOnlineActivity"/>
-        <activity android:name="com.jpeng.android.MyFamilyActivity"/>
-        <activity android:name="com.jpeng.android.RegisterActivity"/>
-        <activity android:name="com.jpeng.android.VedioTestActivity" />
+        <activity android:name="com.jpeng.android.index.check.UriSingleCheckActivity" />
+        <activity android:name="com.jpeng.android.index.check.UriCheckActivity"/>
+        <activity android:name="com.jpeng.android.utils.system.MainActivity" android:hardwareAccelerated="true"/>
+        <activity android:name="com.jpeng.android.setting.UriSettingActivity"/>
+        <activity android:name="com.jpeng.android.setting.UriAboutUsActivity"/>
+        <activity android:name="com.jpeng.android.index.logs.UriCheckLogsActivity"/>
+        <activity android:name="com.jpeng.android.index.service.UriOnlineServiceActivity"/>
+        <activity android:name="com.jpeng.android.setting.UriFamilyActivity"/>
+        <activity android:name="com.jpeng.android.login.UriRegisterActivity"/>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

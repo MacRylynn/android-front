@@ -1,4 +1,4 @@
-package com.jpeng.android.utils;
+package com.jpeng.android.utils.system;
 
 
 import android.content.Intent;
@@ -10,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.jpeng.android.AboutUsActivity;
-import com.jpeng.android.MyFamilyActivity;
+import com.jpeng.android.setting.UriAboutUsActivity;
+import com.jpeng.android.setting.UriFamilyActivity;
 import com.jpeng.android.R;
-import com.jpeng.android.SettingActivity;
+import com.jpeng.android.setting.UriSettingActivity;
 
 
 /**
@@ -30,7 +30,7 @@ public class Tab4Pager extends Fragment implements View.OnClickListener {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SettingActivity.class);
+                Intent intent = new Intent(getActivity(), UriSettingActivity.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +39,7 @@ public class Tab4Pager extends Fragment implements View.OnClickListener {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MyFamilyActivity.class);
+                Intent intent = new Intent(getActivity(), UriFamilyActivity.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +48,7 @@ public class Tab4Pager extends Fragment implements View.OnClickListener {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AboutUsActivity.class);
+                Intent intent = new Intent(getActivity(), UriAboutUsActivity.class);
                 startActivity(intent);
             }
         });

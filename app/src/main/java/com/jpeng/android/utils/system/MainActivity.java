@@ -1,4 +1,4 @@
-package com.jpeng.android.utils;
+package com.jpeng.android.utils.system;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -9,11 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.jpeng.android.R;
-import com.jpeng.android.utils.Adapter;
-import com.jpeng.android.utils.Tab1Pager;
-import com.jpeng.android.utils.Tab2Pager;
-import com.jpeng.android.utils.Tab3Pager;
-import com.jpeng.android.utils.Tab4Pager;
 import com.jpeng.jptabbar.BadgeDismissListener;
 import com.jpeng.jptabbar.JPTabBar;
 import com.jpeng.jptabbar.OnTabSelectListener;

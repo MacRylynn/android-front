@@ -1,4 +1,4 @@
-package com.jpeng.android.utils;
+package com.jpeng.android.utils.system;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jpeng.android.R;
+import com.jpeng.android.utils.system.MainActivity;
 import com.jpeng.jptabbar.JPTabBar;
 
 /**

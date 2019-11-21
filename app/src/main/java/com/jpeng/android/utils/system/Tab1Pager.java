@@ -1,4 +1,4 @@
-package com.jpeng.android.utils;
+package com.jpeng.android.utils.system;
 
 
 import android.content.Intent;
@@ -10,11 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.jpeng.android.CheckActivity;
+import com.jpeng.android.index.check.UriCheckActivity;
 import com.jpeng.android.R;
-import com.jpeng.android.ServiceOnlineActivity;
-import com.jpeng.android.TestRecordActivity;
-import com.jpeng.android.VedioTestActivity;
+import com.jpeng.android.index.service.UriOnlineServiceActivity;
+import com.jpeng.android.index.logs.UriCheckLogsActivity;
 
 /**
  * 第一个主页面 里面包括检测、检测记录、在线客服
@@ -30,7 +29,7 @@ public class Tab1Pager extends Fragment implements View.OnClickListener {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), CheckActivity.class);//从implements跳转到其他的Activity
+                Intent intent = new Intent(getActivity(), UriCheckActivity.class);//从implements跳转到其他的Activity
                 startActivity(intent);
             }
         });
@@ -39,7 +38,7 @@ public class Tab1Pager extends Fragment implements View.OnClickListener {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), TestRecordActivity.class);
+                Intent intent = new Intent(getActivity(), UriCheckLogsActivity.class);
                 startActivity(intent);
             }
         });
@@ -48,7 +47,7 @@ public class Tab1Pager extends Fragment implements View.OnClickListener {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ServiceOnlineActivity.class);
+                Intent intent = new Intent(getActivity(), UriOnlineServiceActivity.class);
                 startActivity(intent);
             }
         });

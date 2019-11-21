@@ -1,4 +1,4 @@
-package com.jpeng.android;
+package com.jpeng.android.knowledge;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,14 +11,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.jpeng.android.R;
+
 import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by ${LJ} on 2018/10/22.
+ * @ClassName UriSingleLogActivity
+ * @Description
+ * @Author: lijiao73
+ * @Date: 2019/11/21 0021 下午 11:04
  */
-
-public class VedioTestActivity extends Activity {
+public class UriKnowledgeActivity extends Activity {
     /*用来记录录像存储路径*/
     File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + "/nbinpic/hello.mp4");//设置录像存储路径
     //File file = new File("storage/SDCARD/vedio/video.mp4" );//设置录像存储路径
@@ -48,7 +52,7 @@ public class VedioTestActivity extends Activity {
 
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
                 startActivityForResult(intent, 0);
-                Toast.makeText(VedioTestActivity.this, file.getPath(), Toast.LENGTH_LONG).show();
+                Toast.makeText(UriKnowledgeActivity.this, file.getPath(), Toast.LENGTH_LONG).show();
 
             }
         });
@@ -57,7 +61,7 @@ public class VedioTestActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(VedioTestActivity.this, "kaiasdasd", Toast.LENGTH_LONG).show();
+                Toast.makeText(UriKnowledgeActivity.this, "kaiasdasd", Toast.LENGTH_LONG).show();
 
             }
         });

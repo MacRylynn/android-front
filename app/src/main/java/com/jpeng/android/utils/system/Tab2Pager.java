@@ -1,4 +1,4 @@
-package com.jpeng.android.utils;
+package com.jpeng.android.utils.system;
 
 
 import android.annotation.SuppressLint;
@@ -16,6 +16,7 @@ import android.widget.Button;
 
 
 import com.jpeng.android.R;
+import com.jpeng.android.utils.system.MainActivity;
 import com.jpeng.jptabbar.JPTabBar;
 import com.jpeng.jptabbar.animate.AnimationType;
 

@@ -48,7 +48,7 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         StrictMode.setVmPolicy(builder.build());
         builder.detectFileUriExposure();
         //和界面连接
-        setContentView(R.layout.checkpage);
+        setContentView(R.layout.check);
         //跳转到显示结果的界面
         Button btn = (Button) findViewById(R.id.res_btn);
         btn.setOnClickListener(new View.OnClickListener() {

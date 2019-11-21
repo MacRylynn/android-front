@@ -1,4 +1,4 @@
-package com.jpeng.android;
+package com.jpeng.android.utils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.jpeng.android.R;
 import com.jpeng.android.utils.Adapter;
 import com.jpeng.android.utils.Tab1Pager;
 import com.jpeng.android.utils.Tab2Pager;

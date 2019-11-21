@@ -20,7 +20,7 @@
             android:layout_marginTop="320dp"
             android:singleLine="false"
             android:text="@string/littleKnowledge"
-            android:textSize="20sp" />
+             android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imageView2"

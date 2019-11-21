@@ -15,7 +15,6 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 
-import com.jpeng.android.MainActivity;
 import com.jpeng.android.R;
 import com.jpeng.jptabbar.JPTabBar;
 import com.jpeng.jptabbar.animate.AnimationType;

@@ -21,7 +21,7 @@
 
         <activity android:name="com.jpeng.android.TestActivity" />
         <activity android:name="com.jpeng.android.CheckActivity"/>
-        <activity android:name="com.jpeng.android.MainActivity" android:hardwareAccelerated="true"/>
+        <activity android:name="com.jpeng.android.utils.MainActivity" android:hardwareAccelerated="true"/>
         <activity android:name="com.jpeng.android.SettingActivity"/>
         <activity android:name="com.jpeng.android.AboutUsActivity"/>
         <activity android:name="com.jpeng.android.TestRecordActivity"/>

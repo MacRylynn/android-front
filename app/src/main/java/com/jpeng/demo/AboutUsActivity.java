@@ -12,7 +12,7 @@ public class AboutUsActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.aboutus);
+          setContentView(R.layout.aboutus);
 
     }
 

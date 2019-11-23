@@ -1,35 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView1"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#f4f4f4"
+    android:orientation="vertical">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:singleLine="false"
+        android:text="登录"
+        android:textSize="20sp"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="270sp"
+        android:layout_height="180sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/icon2"/>
+
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f4f4f4"
-        android:orientation="vertical">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="270dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="请输入账号" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="340sp"
-            android:layout_height="500sp"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="320dp"
-            android:singleLine="false"
-            android:text="@string/littleKnowledge"
-             android:textSize="20sp" />
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignStart="@+id/icon"
+        android:layout_marginTop="320dp"
+        android:ems="10"
+        android:hint="请输入密码" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="300sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/icon3" />
-    </RelativeLayout>
-</ScrollView>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:background="@color/colorPrimary"
+        android:text="登录" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="440dp"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="false"
+        android:text="无法登录？"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="30sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="440dp"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="false"
+        android:text="新用户注册"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="false"
+        android:text=" @copyright 2019 MMLB"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+</RelativeLayout>

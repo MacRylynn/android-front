@@ -1,6 +1,6 @@
 <resources>
     //所有的布局文件里面的内容都在设个文件中设置名字和键值索引（规范）
-    <string name="app_name">摩米实验室</string>
+    <string name="app_name">摩米视觉实验室</string>
     <string name="tab1">检测</string>
     <string name="tab2">使用教程</string>
     <string name="tab3">小知识</string>

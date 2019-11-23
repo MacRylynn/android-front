@@ -1,35 +1,206 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView1"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f4f4f4"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFF8F8F8"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="340sp"
-            android:layout_height="500sp"
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="0dp"
             android:singleLine="false"
-            android:text="@string/littleKnowledge"
-             android:textSize="20sp" />
+            android:text="摩米视觉实验室"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:singleLine="false"
+            android:text="开启健康生活"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="35sp" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="300sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/icon3" />
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/head" />
     </RelativeLayout>
-</ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/button1"
+        android:layout_width="160sp"
+        android:layout_height="160sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="139dp"
+        android:background="#79c7a5">
+
+        <TextView
+            android:id="@+id/inner1"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_marginTop="10sp"
+            android:text="开启检测"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_below="@+id/inner1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/check" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/button2"
+        android:layout_width="160sp"
+        android:layout_height="160sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="310dp"
+        android:background="#81c5e5">
+
+        <TextView
+            android:id="@+id/inner2"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_marginTop="10sp"
+            android:text="检测记录"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_below="@+id/inner2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/logs" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/button3"
+        android:layout_width="160sp"
+        android:layout_height="160sp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="310dp"
+        android:background="#096b90"
+        android:text="在线客服">
+
+        <TextView
+            android:id="@+id/inner3"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_marginTop="10sp"
+            android:text="在线客服"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_below="@+id/inner3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:src="@mipmap/service" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="300sp"
+        android:layout_height="120sp"
+        android:layout_marginLeft="60sp"
+        android:layout_marginTop="480sp"
+        android:background="#FFF8F8F8">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/imageView4"
+            android:layout_marginTop="9dp"
+            android:src="@mipmap/watch" />
+
+        <TextView
+            android:id="@+id/inner4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView3"
+            android:layout_alignStart="@+id/inner5"
+            android:autoLink="all"
+            android:singleLine="false"
+            android:text="点击“检测记录”查询您的记录"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_alignStart="@+id/imageView5"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/watch" />
+
+        <TextView
+            android:id="@+id/inner5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:singleLine="false"
+            android:text="点击“检测记录”查询您的记录"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="25sp"
+            android:layout_height="25sp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="11dp"
+            android:layout_marginStart="31dp"
+            android:src="@mipmap/watch" />
+
+        <TextView
+            android:id="@+id/inner6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView5"
+            android:layout_alignStart="@+id/inner4"
+            android:singleLine="false"
+            android:text="点击“在线客服”咨询疑问"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="15sp" />
+    </RelativeLayout>
+</RelativeLayout>

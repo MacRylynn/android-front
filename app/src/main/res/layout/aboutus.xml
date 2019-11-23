@@ -1,30 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f4f4f4"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFF8F8F8"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="18sp"
+            android:layout_height="18sp"
+            android:src="@mipmap/pointleft"
+            android:layout_marginTop="33dp"
+            android:layout_marginLeft="3sp"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:singleLine="false"
+            android:text="摩米视觉实验室"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="30dp"
+            android:singleLine="false"
+            android:text="返回"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:singleLine="false"
+            android:text="关于我们"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="35sp" />
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/head" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="350sp"
+        android:layout_height="220sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-         android:background="@drawable/icon2" />
+        android:background="#FFF8F8F8"
+        android:layout_marginTop="140sp">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="17dp"
+            android:text="摩米实验室"
+            android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="340sp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_alignStart="@+id/textView"
+            android:layout_below="@+id/textView"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView6" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_below="@+id/textView"
+            android:layout_toEndOf="@+id/imageView6"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView7" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_below="@+id/textView"
+            android:layout_toEndOf="@+id/imageView7"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView9" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_below="@+id/textView"
+            android:layout_toEndOf="@+id/imageView9"
+            android:src="@mipmap/star" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_alignTop="@+id/imageView8"
+            android:layout_toEndOf="@+id/imageView8"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView10" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="320sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10sp"
+            android:text="摩米创新工场以电子科技大学现代光电测控与仪器实验室为基础组建,是国内第一个完全面向产业化，具有自我造血功能并具备较强产业集聚效应的创新工场，是一家立足光电信息技术创新驱动，集研发、培训、项目孵化、交易、产业集聚为一体的新型实体科技企业。"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="350sp"
+        android:layout_height="180sp"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="@string/aboutUs"
-        android:textSize="20sp" />
+        android:background="#FFF8F8F8"
+        android:layout_marginTop="380dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/imageView11"
+            android:layout_marginStart="90dp"
+            android:src="@mipmap/left"
+            android:id="@+id/imageView12" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="69dp"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/right" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="125sp"
+            android:layout_marginTop="25sp"
+            android:text="联系方式"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="320sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="价值观：实现科技创新创业价值最大化
+            使    命：孕育科技产业发展土壤、
+            加速高新技术成果产业、助推地方产业结构转型 。
+            地    址：逸夫楼505      "
+            android:textSize="12sp" />
+    </RelativeLayout>
+
 
 </RelativeLayout>

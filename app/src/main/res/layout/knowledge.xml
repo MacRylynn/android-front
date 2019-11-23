@@ -1,35 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView1"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#f4f4f4"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#FFF8F8F8"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView8"
-            android:layout_width="340sp"
-            android:layout_height="500sp"
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="320dp"
+            android:layout_marginTop="0dp"
             android:singleLine="false"
-            android:text="@string/littleKnowledge"
-             android:textSize="20sp" />
+            android:text="摩米视觉实验室"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:singleLine="false"
+            android:text="尿液小常识"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="35sp" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="300sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/icon3" />
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/head" />
     </RelativeLayout>
-</ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="350sp"
+        android:layout_height="220sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FFF8F8F8"
+        android:layout_marginTop="140sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="17dp"
+            android:text="尿液的形成"
+            android:textSize="12sp"
+            android:id="@+id/textView" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_alignStart="@+id/textView"
+            android:layout_below="@+id/textView"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView6" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_below="@+id/textView"
+            android:layout_toEndOf="@+id/imageView6"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView7" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_below="@+id/textView"
+            android:layout_toEndOf="@+id/imageView7"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView9" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_below="@+id/textView"
+            android:layout_toEndOf="@+id/imageView9"
+            android:src="@mipmap/star" />
+
+        <ImageView
+            android:layout_width="15sp"
+            android:layout_height="15sp"
+            android:layout_alignTop="@+id/imageView8"
+            android:layout_toEndOf="@+id/imageView8"
+            android:src="@mipmap/star"
+            android:id="@+id/imageView10" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="320sp"
+            android:layout_marginStart="10sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="       当原尿流经肾小管时，原尿中对人体有用的全部葡萄糖、大部分水和部分无机盐，被肾小管重新吸收，回到肾小管周围毛细血管的血液里。原尿经过肾小管的重吸收作用，剩下的水和无机盐、尿素和尿酸等就形成了尿液。
+       肾小管形成的尿液经肾乳头到达肾髓质，肾髓质连输尿管到达膀胱，最后经尿道排出体外"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="350sp"
+        android:layout_height="180sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FFF8F8F8"
+        android:layout_marginTop="380dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/imageView11"
+            android:layout_marginStart="90dp"
+            android:src="@mipmap/left"
+            android:id="@+id/imageView12" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="69dp"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/right" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView12"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/imageView12"
+            android:text="小知识"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="320sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="尿液的颜色、气味、排尿次数和每天的排尿量等都能反映身体的健康状况，尿液出现异常变化可能是一些疾病的征兆，那么，合理观察很重要！！"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

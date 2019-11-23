@@ -19,7 +19,7 @@ public class Tab3Pager extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.activitythree, null);
+        View layout = inflater.inflate(R.layout.knowledge, null);
         init(layout);
         return layout;
     }

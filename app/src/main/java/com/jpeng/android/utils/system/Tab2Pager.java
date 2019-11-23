@@ -30,7 +30,7 @@ public class Tab2Pager extends Fragment {
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.activitytwo, null);
+        View layout = inflater.inflate(R.layout.tutorial, null);
         init(layout);
         webview = (layout).findViewById(R.id.webView);
         Button startPlay = (layout).findViewById(R.id.button4);

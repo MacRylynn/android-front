@@ -23,7 +23,7 @@ public class Tab4Pager extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.activityfour, null);
+        View layout = inflater.inflate(R.layout.setting, null);
 
         //跳转到设置页面
         Button btn2 = (Button) layout.findViewById(R.id.button5);

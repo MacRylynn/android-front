@@ -22,7 +22,7 @@ public class Tab1Pager extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.activityone, null);
+        View layout = inflater.inflate(R.layout.index, null);
         init(layout);
         //跳转到检测页面
         Button btn = (Button) layout.findViewById(R.id.button);

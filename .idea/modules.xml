@@ -3,11 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-front.iml" filepath="$PROJECT_DIR$/android-front.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/android-front-app.iml" filepath="$PROJECT_DIR$/app/android-front-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/android-front-library.iml" filepath="$PROJECT_DIR$/library/android-front-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/master_degree-android-front.iml" filepath="$PROJECT_DIR$/master_degree-android-front.iml" />
     </modules>
   </component>
 </project>

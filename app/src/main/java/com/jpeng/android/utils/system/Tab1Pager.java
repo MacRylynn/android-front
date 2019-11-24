@@ -9,9 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.jpeng.android.index.check.UriCheckActivity;
 import com.jpeng.android.R;
+import com.jpeng.android.index.check.UriChooseAimAcyivity;
+import com.jpeng.android.index.logs.UriChoosePersonAvtivity;
 import com.jpeng.android.index.service.UriOnlineServiceActivity;
 import com.jpeng.android.index.logs.UriCheckLogsActivity;
 
@@ -25,25 +28,25 @@ public class Tab1Pager extends Fragment implements View.OnClickListener {
         View layout = inflater.inflate(R.layout.index, null);
         init(layout);
         //跳转到检测页面
-        Button btn = (Button) layout.findViewById(R.id.button);
+        RelativeLayout btn = (RelativeLayout) layout.findViewById(R.id.button1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), UriCheckActivity.class);//从implements跳转到其他的Activity
+                Intent intent = new Intent(getActivity(), UriChooseAimAcyivity.class);//从implements跳转到其他的Activity
                 startActivity(intent);
             }
         });
         //跳转到检测记录页面
-        Button btn2 = (Button) layout.findViewById(R.id.button2);
+        RelativeLayout btn2 = (RelativeLayout) layout.findViewById(R.id.button2);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), UriCheckLogsActivity.class);
+                Intent intent = new Intent(getActivity(), UriChoosePersonAvtivity.class);
                 startActivity(intent);
             }
         });
         //跳转到在线客服页面
-        Button btn3 = (Button) layout.findViewById(R.id.button3);
+        RelativeLayout btn3 = (RelativeLayout) layout.findViewById(R.id.button3);
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,15 +54,6 @@ public class Tab1Pager extends Fragment implements View.OnClickListener {
                 startActivity(intent);
             }
         });
-        Button btn4 = (Button) layout.findViewById(R.id.button4);
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), VedioTestActivity.class);
-                startActivity(intent);
-            }
-        });
-
         return layout;
     }
 

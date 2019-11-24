@@ -53,7 +53,6 @@ public class Tab2Pager extends Fragment {
                 webview.loadUrl(videopPath);
             }
         });
-
         return layout;
     }
 

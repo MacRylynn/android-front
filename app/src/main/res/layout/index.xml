@@ -52,7 +52,9 @@
         android:layout_height="160sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="139dp"
-        android:background="#79c7a5">
+        android:background="#79c7a5"
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/inner1"
@@ -73,7 +75,6 @@
             android:src="@mipmap/check" />
     </RelativeLayout>
 
-
     <RelativeLayout
         android:id="@+id/button2"
         android:layout_width="160sp"
@@ -81,7 +82,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="310dp"
-        android:background="#81c5e5">
+        android:background="#81c5e5"
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/inner2"
@@ -109,6 +112,8 @@
         android:layout_marginStart="210dp"
         android:layout_marginTop="310dp"
         android:background="#096b90"
+        android:clickable="true"
+        android:focusable="true"
         android:text="在线客服">
 
         <TextView
@@ -141,8 +146,8 @@
             android:id="@+id/imageView3"
             android:layout_width="25sp"
             android:layout_height="25sp"
-            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/imageView4"
+            android:layout_alignParentTop="true"
             android:layout_marginTop="9dp"
             android:src="@mipmap/watch" />
 
@@ -150,8 +155,8 @@
             android:id="@+id/inner4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageView3"
             android:layout_alignStart="@+id/inner5"
+            android:layout_alignBottom="@+id/imageView3"
             android:autoLink="all"
             android:singleLine="false"
             android:text="点击“检测记录”查询您的记录"
@@ -185,18 +190,18 @@
             android:id="@+id/imageView5"
             android:layout_width="25sp"
             android:layout_height="25sp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="11dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="31dp"
+            android:layout_marginBottom="11dp"
             android:src="@mipmap/watch" />
 
         <TextView
             android:id="@+id/inner6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/imageView5"
             android:layout_alignStart="@+id/inner4"
+            android:layout_alignBottom="@+id/imageView5"
             android:singleLine="false"
             android:text="点击“在线客服”咨询疑问"
             android:textAlignment="center"

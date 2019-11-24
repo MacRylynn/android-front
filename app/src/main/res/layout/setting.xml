@@ -90,7 +90,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="30sp">
 
-            <TableRow android:layout_marginTop="20sp"
+            <TableRow
+                android:id="@+id/tablerow1"
+                android:layout_marginTop="20sp"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -98,7 +100,7 @@
                     android:layout_width="58dp"
                     android:layout_height="28sp"
                     android:layout_weight="28sp"
-                    android:src="@drawable/family"/>
+                    android:src="@drawable/family" />
 
                 <TextView
                     android:text="家庭信息设置"
@@ -113,7 +115,11 @@
                     android:src="@drawable/you" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="20sp">
+            <TableRow
+                android:id="@+id/tablerow2"
+                android:layout_marginTop="20sp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="58dp"
@@ -155,7 +161,11 @@
                     android:src="@drawable/you" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="20sp">
+            <TableRow
+                android:id="@+id/tablerow3"
+                android:layout_marginTop="20sp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="58sp"
@@ -197,7 +207,11 @@
                     android:src="@drawable/you" />
             </TableRow>
 
-            <TableRow android:layout_marginTop="20sp">
+            <TableRow
+                android:id="@+id/tablerow4"
+                android:layout_marginTop="20sp"
+                android:clickable="true"
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="58dp"

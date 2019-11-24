@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.jpeng.android">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -22,7 +23,6 @@
         <activity android:name="com.jpeng.android.index.check.UriSingleCheckActivity" />
         <activity android:name="com.jpeng.android.index.check.UriCheckActivity"/>
         <activity android:name="com.jpeng.android.utils.system.MainActivity" android:hardwareAccelerated="true"/>
-        <activity android:name="com.jpeng.android.setting.UriSettingActivity"/>
         <activity android:name="com.jpeng.android.setting.UriAboutUsActivity"/>
         <activity android:name="com.jpeng.android.index.logs.UriCheckLogsActivity"/>
         <activity android:name="com.jpeng.android.index.service.UriOnlineServiceActivity"/>
@@ -42,7 +42,8 @@
     </application>
 
     <!--各种手机权限的获取-->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name = "android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>

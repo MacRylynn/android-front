@@ -70,13 +70,88 @@
     </RelativeLayout>
 
 
+    <RelativeLayout
+        android:layout_width="350sp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="150sp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow>
+                <TextView  android:text="1 年        龄："
+                    android:textSize="20sp"/>
+                <EditText android:hint="请输入年龄"
+                    android:layout_weight="22"/>
+            </TableRow>
+            <TableRow>
+                <TextView  android:text="2 职        业："
+                    android:textSize="20sp"/>
+                <EditText android:hint="请输入职业"
+                    android:layout_weight="22"/>
+            </TableRow>
+            <TableRow>
+                <TextView  android:text="3 姓        名："
+                    android:textSize="20sp"/>
+                <EditText android:hint="请输入姓名"
+                    android:layout_weight="22"/>
+            </TableRow>
+            <TableRow>
+                <TextView  android:text="4 电话号码："
+                    android:textSize="20sp"/>
+                <EditText android:hint="请输入电话号码"
+                    android:layout_weight="22"/>
+            </TableRow>
+            <TableRow>
+                <TextView  android:text="5 家庭地址："
+                    android:textSize="20sp"/>
+                <EditText android:hint="请输入家庭地址"
+                    android:layout_weight="22"/>
+            </TableRow>
+            <TableRow>
+                <TextView  android:text="6 是否有尿液病史："
+                    android:textSize="20sp"/>
+
+                <EditText android:hint="请输入是否"
+                    android:layout_weight="22"/>
+            </TableRow>
+            <TableRow>
+                <TextView  android:text="7 患病时间："
+                    android:textSize="20sp"/>
+                <EditText android:hint="如：2019-11-10"
+                    android:layout_weight="22"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="380sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="15sp"
+        android:background="@color/colorPrimary"
+        android:text="保存" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="380sp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15sp"
+        android:layout_marginTop="600dp"
+        android:background="@color/colorPrimary"
+        android:text="重置" />
+
+
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
         android:singleLine="false"
         android:text=" @copyright 2019 MMLB"

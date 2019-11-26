@@ -70,11 +70,13 @@
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="300sp"
+        android:clickable="true"
         android:layout_height="200sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="360sp"
-        android:background="#81c5e5">
+        android:background="#81c5e5"
+        android:focusable="true">
 
         <TextView
             android:layout_width="match_parent"
@@ -98,10 +100,12 @@
         android:id="@+id/relativeLayout1"
         android:layout_width="300sp"
         android:layout_height="200sp"
+        android:clickable="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="140sp"
-        android:background="#79c7a5">
+        android:background="#79c7a5"
+        android:focusable="true">
 
         <TextView
             android:layout_width="match_parent"

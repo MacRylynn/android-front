@@ -8,26 +8,34 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-      >
+        android:theme="@style/AppTheme">
         <!--每一个Activity的权限 相当于在此处注册每一个Activity-->
-        <activity android:name="com.jpeng.android.login.UriLoginActivity" android:launchMode="singleInstance">
+        <activity
+            android:name="com.jpeng.android.login.UriLoginActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name="com.jpeng.android.index.check.UriCheckActivity" />
+        <activity android:name="com.jpeng.android.index.check.UriChooseAimAcyivity" />
         <activity android:name="com.jpeng.android.index.check.UriSingleCheckActivity" />
-        <activity android:name="com.jpeng.android.index.check.UriCheckActivity"/>
-        <activity android:name="com.jpeng.android.utils.system.MainActivity" android:hardwareAccelerated="true"/>
-        <activity android:name="com.jpeng.android.setting.UriAboutUsActivity"/>
-        <activity android:name="com.jpeng.android.index.logs.UriCheckLogsActivity"/>
-        <activity android:name="com.jpeng.android.index.service.UriOnlineServiceActivity"/>
-        <activity android:name="com.jpeng.android.setting.UriFamilyActivity"/>
-        <activity android:name="com.jpeng.android.login.UriRegisterActivity"/>
+        <activity android:name="com.jpeng.android.index.logs.UriCheckLogsActivity" />
+        <activity android:name="com.jpeng.android.index.logs.UriChoosePersonAvtivity" />
+        <activity android:name="com.jpeng.android.index.logs.UriSingleLogActivity" />
+        <activity android:name="com.jpeng.android.index.service.UriOnlineServiceActivity" />
+        <activity android:name="com.jpeng.android.login.UriRegisterActivity" />
+        <activity
+            android:name="com.jpeng.android.utils.system.MainActivity"
+            android:hardwareAccelerated="true" />
+        <activity android:name="com.jpeng.android.setting.UriAboutUsActivity" />
+        <activity android:name="com.jpeng.android.setting.UriCorrectionActivity" />
+        <activity android:name="com.jpeng.android.setting.UriFamilyActivity" />
+        <activity android:name="com.jpeng.android.setting.UriMemberActivity" />
+        <activity android:name="com.jpeng.android.setting.UriModifyAccountActivity" />
+
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -36,19 +44,22 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
     </application>
 
     <!--各种手机权限的获取-->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name = "android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

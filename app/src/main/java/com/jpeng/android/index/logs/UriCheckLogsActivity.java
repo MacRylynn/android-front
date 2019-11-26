@@ -1,6 +1,7 @@
 package com.jpeng.android.index.logs;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,34 +30,53 @@ public class UriCheckLogsActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.testrecord);
-        dbHelper = new MyDatabaseHelper(this, "user_results.db", null, 1);
-        final TextView textView = findViewById(R.id.textView2);
-        Button showRecord = findViewById(R.id.button);
-        //显示检测记录，防止一直点击多次显示用isDisplay来控制点击次数
-        showRecord.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.checklogs);
+        //跳转到具体的记录
+        Button btn = findViewById(R.id.button5);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
-                Cursor cursor = db.query("user_results", null, null, null, null, null, null);
-                if (cursor.moveToFirst()) {
-                    do {
-                        String result = cursor.getString(cursor.getColumnIndex("user_result"));
-                        if (result != null) {
-                            results = results + result + "\n";
-                        }
-                    } while (cursor.moveToNext());
-                }
-                if (isDisplay) {
-                    if (!Objects.equals(results, "检测结果：" + "\n")) {
-                        textView.setText(results);
-                        isDisplay = false;
-                    } else {
-                        Toast.makeText(UriCheckLogsActivity.this, "您还没有记录,请开启检测", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                cursor.close();
+                Intent intent = new Intent(UriCheckLogsActivity.this, UriSingleLogActivity.class);//从Activity跳转到Activity
+                startActivity(intent);
             }
         });
+
+        //返回家属选择页面
+        TextView textView = findViewById(R.id.textView8);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UriCheckLogsActivity.this, UriChoosePersonAvtivity.class);//从Activity跳转到Activity
+                startActivity(intent);
+            }
+        });
+//        dbHelper = new MyDatabaseHelper(this, "user_results.db", null, 1);
+//        final TextView textView = findViewById(R.id.textView2);
+//        Button showRecord = findViewById(R.id.button);
+//        //显示检测记录，防止一直点击多次显示用isDisplay来控制点击次数
+//        showRecord.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                SQLiteDatabase db = dbHelper.getWritableDatabase();
+//                Cursor cursor = db.query("user_results", null, null, null, null, null, null);
+//                if (cursor.moveToFirst()) {
+//                    do {
+//                        String result = cursor.getString(cursor.getColumnIndex("user_result"));
+//                        if (result != null) {
+//                            results = results + result + "\n";
+//                        }
+//                    } while (cursor.moveToNext());
+//                }
+//                if (isDisplay) {
+//                    if (!Objects.equals(results, "检测结果：" + "\n")) {
+//                        textView.setText(results);
+//                        isDisplay = false;
+//                    } else {
+//                        Toast.makeText(UriCheckLogsActivity.this, "您还没有记录,请开启检测", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//                cursor.close();
+//            }
+//        });
     }
 }

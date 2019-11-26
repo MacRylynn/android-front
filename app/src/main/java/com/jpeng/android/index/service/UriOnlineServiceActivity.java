@@ -10,9 +10,14 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jpeng.android.R;
+import com.jpeng.android.index.check.UriChooseAimAcyivity;
+import com.jpeng.android.index.check.UriSingleCheckActivity;
+import com.jpeng.android.utils.system.MainActivity;
 
 import java.util.List;
 
@@ -29,8 +34,19 @@ public class UriOnlineServiceActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.onlineservice);
+        //返回到主页
+        TextView textView = findViewById(R.id.textView8);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UriOnlineServiceActivity.this, MainActivity.class);//从Activity跳转到Activity
+                startActivity(intent);
+            }
+        });
+
+
         //点击之后直接拨打号码
-        Button btn1 = findViewById(R.id.button1);
+        RelativeLayout btn1 = findViewById(R.id.relativeLayout1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +61,7 @@ public class UriOnlineServiceActivity extends Activity {
             }
         });
         //点击之后跳转到QQ聊天界面QQ号码设置在连接里面
-        Button btn = findViewById(R.id.button2);
+        RelativeLayout btn = findViewById(R.id.relativeLayout2);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

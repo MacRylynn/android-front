@@ -19,9 +19,11 @@ import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jpeng.android.R;
+import com.jpeng.android.utils.system.MainActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,8 +51,17 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         builder.detectFileUriExposure();
         //和界面连接
         setContentView(R.layout.check);
-        //跳转到显示结果的界面
-        Button btn = (Button) findViewById(R.id.res_btn);
+        //返回到选择家属页面
+        TextView textView = findViewById(R.id.textView8);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UriCheckActivity.this, UriChooseAimAcyivity.class);//从Activity跳转到Activity
+                startActivity(intent);
+            }
+        });
+        //跳转到上传检测页面
+        Button btn = (Button) findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,13 +73,11 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         if (dialog()) {
             initView();
         }
-
-
     }
 
     //初始化相机的函数
     private void initView() {
-        findViewById(R.id.camera_btn).setOnClickListener(this);
+        findViewById(R.id.button8).setOnClickListener(this);
     }
 
     //定时拍照的的弹框函数
@@ -117,7 +126,7 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
             String state = Environment.getExternalStorageState();
             if (!state.equals(Environment.MEDIA_MOUNTED)) return;
             // 把原图显示到界面上
-            View view = findViewById(R.id.imageView1);
+            View view = findViewById(R.id.imageView);
             view.setBackgroundDrawable(new BitmapDrawable(readpic()));
             view.animate().rotation(90);
             try {
@@ -134,7 +143,7 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View arg0) {
         switch (arg0.getId()) {
-            case R.id.camera_btn:
+            case R.id.button8:
                 try {
                     buttonClick();
                 } catch (IOException e) {

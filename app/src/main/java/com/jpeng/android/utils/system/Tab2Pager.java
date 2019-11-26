@@ -33,7 +33,7 @@ public class Tab2Pager extends Fragment {
         View layout = inflater.inflate(R.layout.tutorial, null);
         init(layout);
         webview = (layout).findViewById(R.id.webView);
-        Button startPlay = (layout).findViewById(R.id.button4);
+        WebView startPlay = (layout).findViewById(R.id.webView);
         startPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

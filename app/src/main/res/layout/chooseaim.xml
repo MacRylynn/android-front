@@ -14,25 +14,13 @@
         android:background="#FFF8F8F8"
         android:orientation="vertical">
 
+
         <ImageView
             android:layout_width="18sp"
             android:layout_height="18sp"
             android:layout_marginLeft="3sp"
             android:layout_marginTop="33dp"
             android:src="@mipmap/pointleft" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="0dp"
-            android:singleLine="false"
-            android:text="摩米视觉实验室"
-            android:textAlignment="center"
-            android:textColor="#000"
-            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/textView8"
@@ -48,6 +36,21 @@
             android:textAllCaps="true"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:singleLine="false"
+            android:text="摩米视觉实验室"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="10sp" />
+
 
         <TextView
             android:id="@+id/textView2"
@@ -70,6 +73,15 @@
     </RelativeLayout>
 
 
+    <Button
+        android:id="@+id/choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="134dp"
+        android:text="模拟家属" />
 
     <TextView
         android:id="@+id/textView9"

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jpeng.android.utils.MyDatabaseHelper;
@@ -43,10 +44,10 @@ public class UriLoginActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        editText1 = findViewById(R.id.editText1);
+        editText1 = findViewById(R.id.editText);
         editText2 = findViewById(R.id.editText2);
         //跳转到注册的页面
-        Button btn2 = findViewById(R.id.button8);
+        TextView btn2 = findViewById(R.id.textView5);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +55,18 @@ public class UriLoginActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button btn3 = findViewById(R.id.button4);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UriLoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         //创建数据库 如果数据库中有保存的账号和密码则自己获取账号和密码
         dbHelper = new MyDatabaseHelper(this, "user_results.db", null, 1);
         SQLiteDatabase db = dbHelper.getWritableDatabase();

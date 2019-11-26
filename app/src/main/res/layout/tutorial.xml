@@ -68,7 +68,10 @@
             android:layout_height="250sp"
             android:layout_below="@+id/textView7"
             android:layout_centerHorizontal="true"
-            tools:ignore="WebViewLayout" />
+            tools:ignore="WebViewLayout"
+            android:clickable="true"
+            android:focusable="true" />
+
 
         <TableLayout
             android:layout_width="330sp"
@@ -79,28 +82,24 @@
             <TableRow>
                 <TextView
                     android:layout_height="30sp"
-                    android:layout_weight=""
                     android:text="1. 请使用装置把样本滴加在试纸上"
                     android:textSize="20sp" />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_height="30sp"
-                    android:layout_weight=""
                     android:text="2. 打开手机APP并跳转到检测页面"
                     android:textSize="20sp" />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_height="30sp"
-                    android:layout_weight=""
                     android:text="3. 拍摄试纸的图像或视频上传至云端"
                     android:textSize="20sp" />
             </TableRow>
             <TableRow>
                 <TextView
                     android:layout_height="30sp"
-                    android:layout_weight=""
                     android:text="4. 点击检测按钮得到最终结果"
 
                     android:textSize="20sp" />

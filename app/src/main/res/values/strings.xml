@@ -1,10 +1,10 @@
 <resources>
     //所有的布局文件里面的内容都在设个文件中设置名字和键值索引（规范）
     <string name="app_name">摩米视觉实验室</string>
-    <string name="tab1">检测</string>
+    <string name="tab1">主页</string>
     <string name="tab2">使用教程</string>
     <string name="tab3">小知识</string>
-    <string name="tab4">我的</string>
+    <string name="tab4">设置</string>
     //检测项目
     <string name="ProjectsName">项目名称</string>
     <string name="NormalValues">正常值范围</string>
@@ -83,12 +83,7 @@
     <string name="StepThree">第三步</string>
     <string name="StepFour">第四步</string>
     //第三个界面的按钮值
-    <string name="littleKnowledge">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;尿液：人类尿液形成是血液流经肾小球时，血液中的尿酸、尿素、水、无机盐和葡萄糖等物质通过肾小球的滤过作用，过滤到肾小囊中，形成原尿。
-\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;水原尿的主要成分：水：97%、蛋白质：微量、葡萄糖：0.1、尿素：0.03 %、尿酸：0.004%、无机盐：0.9%。
-\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;尿液的主要成分：水：95 %、蛋白质：0%、葡萄糖 ：0%、尿素 ：1.8 %、尿酸：0.05%、无机盐：1.1%。
-\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;颜色：无色、白色、类盐色、黄色、蓝色、绿色、红色。
-\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;气味：氨味、恶臭味、燃烧硫磺气味、甜水果味、焦糖味。\n\n\n\n\n\n\n\n\n</string>
-    //第四个界面的按钮值
+  //第四个界面的按钮值
     <string name="LogIn">登录和注册</string>
     <string name="Setting">设置</string>
     <string name="AboutUs">关于我们</string>

@@ -8,10 +8,10 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="20sp"
+        android:layout_height="30sp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:singleLine="false"
         android:text="登录"
         android:textSize="20sp"
@@ -77,11 +77,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="440dp"
         android:layout_gravity="center_horizontal"
+        android:clickable="true"
         android:singleLine="false"
         android:text="新用户注册"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:focusable="true" />
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"

@@ -83,5 +83,14 @@
         android:textAlignment="center"
         android:textSize="15sp" />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="132dp"
+        android:text="模拟检测记录" />
+
 
 </RelativeLayout>

@@ -69,7 +69,14 @@
             android:src="@drawable/head" />
     </RelativeLayout>
 
-
+    <Button
+        android:id="@+id/choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="127dp"
+        android:text="模拟检测人员" />
 
     <TextView
         android:id="@+id/textView9"

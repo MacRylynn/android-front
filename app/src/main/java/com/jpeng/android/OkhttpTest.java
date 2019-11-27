@@ -1,13 +1,7 @@
 package com.jpeng.android;
 
-import android.os.Looper;
-import android.widget.Toast;
-
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.jpeng.android.login.UriRegisterActivity;
 import com.jpeng.android.utils.domain.base.CommonRequest;
-import com.jpeng.android.utils.domain.base.CommonResponse;
 import com.jpeng.android.utils.domain.request.UriAccountInfoReq;
 
 import java.io.IOException;
@@ -20,15 +14,19 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class Test {
+/**
+ * @ClassName OkhttpTest
+ * @Description
+ * @Author: lijiao73
+ * @Date: 2019/11/27 0027 下午 8:02
+ */
+public class OkhttpTest {
     public static void main(String[] args) {
-        String url = "http://120.77.221.43:8082/web/user/addaccount";
+        String url = "http://120.77.221.43:8082/web/user/selectaccountuser";
         MediaType mediaType = MediaType.parse("application/json");
+
         UriAccountInfoReq uriAccountInfoReq = new UriAccountInfoReq();
-        uriAccountInfoReq.setAccountNo("adminaaaaaaa");
-        uriAccountInfoReq.setAccountName("admin");
-        uriAccountInfoReq.setRepeatAccountPassword("admin");
-        uriAccountInfoReq.setAccountPassword("admin");
+        uriAccountInfoReq.setId(1L);
         CommonRequest<UriAccountInfoReq> commonRequest = new CommonRequest<>();
         commonRequest.setRequestData(uriAccountInfoReq);
         final Request request = new Request.Builder()
@@ -50,20 +48,18 @@ public class Test {
                 }
                 if (response.code() == 200) {
                     String result = response.body().string();
-                    JSONObject jsonObject = JSON.parseObject(result);
-                    if (jsonObject.getBoolean("resultData")){
-                        System.out.println("注册成功,请返回登录界面登录");
-
-                    }else {
-                        String message = jsonObject.getString("resultMsg");
-                        System.out.println("注册失败："+message);
-                    }
+                    System.out.println(request);
+                    //                    JSONObject jsonObject = JSON.parseObject(result);
+                    //                    if (jsonObject.getBoolean("resultData")) {
+                    //                        System.out.println("注册成功,请返回登录界面登录");
+                    //
+                    //                    } else {
+                    //                        String message = jsonObject.getString("resultMsg");
+                    //                        System.out.println("注册失败：" + message);
+                    //                    }
                 }
             }
         });
 
     }
-
-
-
 }

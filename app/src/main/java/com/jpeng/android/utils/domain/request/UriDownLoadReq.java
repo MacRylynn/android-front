@@ -1,6 +1,5 @@
 package com.jpeng.android.utils.domain.request;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 
 /**

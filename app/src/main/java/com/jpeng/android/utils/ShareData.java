@@ -9,7 +9,17 @@ import android.app.Application;
  * @Date: 2019/11/27 0027 下午 7:24
  */
 public class ShareData extends Application {
+    private long accountId;
     private long userId;
+    private String userCode;
+
+    public long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
+    }
 
     public long getUserId() {
         return userId;
@@ -17,5 +27,13 @@ public class ShareData extends Application {
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public String getUserCode() {
+        return userCode;
+    }
+
+    public void setUserCode(String userCode) {
+        this.userCode = userCode;
     }
 }

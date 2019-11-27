@@ -128,7 +128,7 @@ public class UriLoginActivity extends Activity {
                         startActivity(intent);
                         //将用户ID作为全局变量使用
                         String result = response.body().string();
-                        ((ShareData)getApplication()).setUserId(getAccountId(result));
+                        ((ShareData)getApplication()).setAccountId(getAccountId(result));
                         //把传进来的用户数据保存在本地数据库，然后再TestActivity里面获得用户值，然后方便把用户名和检查结果一起上传到后台的数据库
                         SQLiteDatabase db = dbHelper.getWritableDatabase();//创建或者打开现有的本地数据库
                         ContentValues values = new ContentValues();

@@ -22,6 +22,7 @@ import static com.jpeng.android.R.*;
  */
 
 public class UriChooseAimAcyivity extends Activity {
+    private static final String BaseUrl = "http://120.77.221.43:8082/web/user/selectaccountuser";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,4 +47,6 @@ public class UriChooseAimAcyivity extends Activity {
         });
 
     }
+
+
 }

@@ -44,4 +44,5 @@ dependencies {
     implementation files('libs/javacpp.jar')
     implementation files('libs/javacv.jar')
     provided files ('D:/Android Studio/jre/jre/lib/rt.jar')
+    implementation 'com.alibaba:fastjson:1.1.54.android'
 }

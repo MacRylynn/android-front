@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="430dp"
         android:background="@color/colorPrimary"
-        android:text="登录" />
+        android:text="注册" />
 
     <TextView
         android:id="@+id/textView4"
@@ -75,10 +75,12 @@
         android:layout_marginTop="490dp"
         android:layout_gravity="center_horizontal"
         android:singleLine="false"
+        android:clickable="true"
         android:text="返回登录界面"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/textView5"

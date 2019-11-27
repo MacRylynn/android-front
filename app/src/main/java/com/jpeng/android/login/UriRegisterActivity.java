@@ -114,7 +114,9 @@ public class UriRegisterActivity extends Activity {
                             String result = response.body().string();
                             JSONObject jsonObject = JSON.parseObject(result);
                             if (jsonObject.getBoolean("resultData")){
-                                Toast.makeText(UriRegisterActivity.this, "注册成功,请返回登录界面登录", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UriRegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(UriRegisterActivity.this, UriLoginActivity.class);
+                                startActivity(intent);
                             }else {
                                 String message = jsonObject.getString("resultMsg");
                                 Toast.makeText(UriRegisterActivity.this, "注册失败："+message, Toast.LENGTH_SHORT).show();
@@ -124,15 +126,11 @@ public class UriRegisterActivity extends Activity {
                     }
                 });
             } else {
-                Looper.prepare();
                 Toast.makeText(UriRegisterActivity.this, "注册失败,请检查两次输入的密码是否正确", Toast.LENGTH_SHORT).show();
-                Looper.loop();
             }
         } else {
             //如果账号密码不符合规范则抛出此信息
-            Looper.prepare();
             Toast.makeText(UriRegisterActivity.this, "注册失败,请检查用户名和密码是否规范", Toast.LENGTH_SHORT).show();
-            Looper.loop();
         }
 
     }

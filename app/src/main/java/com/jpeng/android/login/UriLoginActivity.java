@@ -18,6 +18,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jpeng.android.utils.MyDatabaseHelper;
 import com.jpeng.android.R;
+import com.jpeng.android.utils.ShareData;
 import com.jpeng.android.utils.domain.base.CommonRequest;
 import com.jpeng.android.utils.domain.request.UriAccountInfoReq;
 import com.jpeng.android.utils.system.MainActivity;
@@ -125,17 +126,19 @@ public class UriLoginActivity extends Activity {
                         //跳转到主界面
                         Intent intent = new Intent(UriLoginActivity.this, MainActivity.class);
                         startActivity(intent);
-                        //结束此Activity
-                        finish();
-                        //把传进来的用户数据保存在本地数据库，然后再TestActivity里面获得用户值，然后方便把用户名和检查结果一起上传到后台的数据库
+                        //将用户ID作为全局变量使用
                         String result = response.body().string();
+                        ((ShareData)getApplication()).setUserId(getAccountId(result));
+                        //把传进来的用户数据保存在本地数据库，然后再TestActivity里面获得用户值，然后方便把用户名和检查结果一起上传到后台的数据库
                         SQLiteDatabase db = dbHelper.getWritableDatabase();//创建或者打开现有的本地数据库
                         ContentValues values = new ContentValues();
                         values.put("user_name", account);
                         values.put("user_id", getAccountId(result));//此ID供以后用
                         values.put("user_password", password);
                         db.insert("user_results", null, values);//把用户名保存到本地数据库
-                        System.out.println("用户数据保存成功");
+                        Toast.makeText(UriLoginActivity.this, "用户数据保存成功", Toast.LENGTH_SHORT).show();
+                        //结束此Activity
+                        finish();
                     } else {
                         Toast.makeText(UriLoginActivity.this, "登录出现未知错误", Toast.LENGTH_SHORT).show();
                     }
@@ -143,9 +146,7 @@ public class UriLoginActivity extends Activity {
                 }
             });
         } else {
-            Looper.prepare();
             Toast.makeText(UriLoginActivity.this, "请输入账号和密码进行登录", Toast.LENGTH_SHORT).show();
-            Looper.loop();
         }
 
     }

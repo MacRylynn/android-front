@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!--图标 APP名称-->
     <application
+        android:name=".utils.ShareData"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
@@ -35,8 +36,6 @@
         <activity android:name="com.jpeng.android.setting.UriFamilyActivity" />
         <activity android:name="com.jpeng.android.setting.UriMemberActivity" />
         <activity android:name="com.jpeng.android.setting.UriModifyAccountActivity" />
-
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="my.provider"

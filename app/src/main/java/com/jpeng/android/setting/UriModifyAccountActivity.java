@@ -18,9 +18,9 @@ import com.jpeng.android.utils.system.MainActivity;
 public class UriModifyAccountActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.membersetting);
+        setContentView(R.layout.modifyaccount);
         //返回上一页
-        TextView textView = findViewById(R.id.textView8);
+        TextView textView = findViewById(R.id.textView4);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

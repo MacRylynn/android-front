@@ -67,6 +67,8 @@
             android:layout_centerVertical="true"
             android:layout_marginEnd="25dp"
             android:src="@drawable/head" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -117,6 +119,7 @@
             </TableRow>
         </TableLayout>
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="450sp"
@@ -129,141 +132,187 @@
             android:layout_centerVertical="true">
 
             <TableRow android:layout_marginTop="5sp">
-                <TextView android:text="AUG"
+
+                <TextView
                     android:id="@+id/result1"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="HJK"
+                    android:text="AUG" />
+
+                <TextView
                     android:id="@+id/result2"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="EFG"
+                    android:text="HJK" />
+
+                <TextView
                     android:id="@+id/result3"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="EFG" />
             </TableRow>
+
             <TableRow android:layout_marginTop="0sp">
-                <TextView android:text="1"
-                    android:id="@+id/result1-v"
-                    android:textAlignment="center"
+
+                <TextView
+                    android:id="@+id/resultv0"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="1"
-                    android:id="@+id/result2-v"
-                    android:textAlignment="center"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv1"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="1"
-                    android:textAlignment="center"
-                    android:id="@+id/result3-v"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv2"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="1"
+                    android:textAlignment="center" />
             </TableRow>
+
             <TableRow android:layout_marginTop="35sp">
-                <TextView android:text="AUG"
+
+                <TextView
                     android:id="@+id/result4"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="EDG"
+                    android:text="AUG" />
+
+                <TextView
                     android:id="@+id/result5"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="CBD"
+                    android:text="EDG" />
+
+                <TextView
                     android:id="@+id/result6"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="CBD" />
             </TableRow>
+
             <TableRow android:layout_marginTop="0sp">
-                <TextView android:text="1"
-                    android:id="@+id/result4-v"
-                    android:textAlignment="center"
+
+                <TextView
+                    android:id="@+id/resultv3"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="1"
-                    android:id="@+id/result5-v"
-                    android:textAlignment="center"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv4"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="1"
-                    android:textAlignment="center"
-                    android:id="@+id/result6-v"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv5"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="1"
+                    android:textAlignment="center" />
             </TableRow>
+
             <TableRow android:layout_marginTop="35sp">
-                <TextView android:text="AUG"
+
+                <TextView
                     android:id="@+id/result7"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="LGD"
+                    android:text="AUG" />
+
+                <TextView
                     android:id="@+id/result8"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="RND"
+                    android:text="LGD" />
+
+                <TextView
                     android:id="@+id/result9"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="RND" />
             </TableRow>
+
             <TableRow android:layout_marginTop="0sp">
-                <TextView android:text="1"
-                    android:id="@+id/result7-v"
-                    android:textAlignment="center"
+
+                <TextView
+                    android:id="@+id/resultv6"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="1"
-                    android:id="@+id/result8-v"
-                    android:textAlignment="center"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv7"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="1"
-                    android:textAlignment="center"
-                    android:id="@+id/result9-v"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv8"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="1"
+                    android:textAlignment="center" />
             </TableRow>
+
             <TableRow android:layout_marginTop="35sp">
-                <TextView android:text="RLD"
+
+                <TextView
                     android:id="@+id/result10"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="BLD"
+                    android:text="RLD" />
+
+                <TextView
                     android:id="@+id/result11"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="  PH"
+                    android:text="BLD" />
+
+                <TextView
                     android:id="@+id/result12"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="35sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="  PH" />
             </TableRow>
+
             <TableRow android:layout_marginTop="0sp">
-                <TextView android:text="1"
-                    android:id="@+id/result10-v"
-                    android:textAlignment="center"
+
+                <TextView
+                    android:id="@+id/resultv9"
+                    android:layout_marginStart="40sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="40sp"/>
-                <TextView android:text="1"
-                    android:id="@+id/result11-v"
-                    android:textAlignment="center"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv10"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
-                <TextView android:text="1"
-                    android:textAlignment="center"
-                    android:id="@+id/result12-v"
+                    android:text="1"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/resultv11"
+                    android:layout_marginStart="80sp"
                     android:layout_marginTop="0sp"
-                    android:layout_marginStart="80sp"/>
+                    android:text="1"
+                    android:textAlignment="center" />
             </TableRow>
 
         </TableLayout>
     </RelativeLayout>
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="380sp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView9"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
-        android:text="显示检测结果"
-        android:textColor="#FF505050" />
 
     <TextView
         android:id="@+id/textView9"
@@ -276,6 +325,5 @@
         android:text=" @copyright 2019 MMLB"
         android:textAlignment="center"
         android:textSize="15sp" />
-
 
 </RelativeLayout>

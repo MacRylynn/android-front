@@ -12,8 +12,17 @@ public class ShareData extends Application {
     private long accountId;
     private long userId;
     private String userCode;
+    private long checkId;
     private String checkResult;
     private String checkTime;
+
+    public long getCheckId() {
+        return checkId;
+    }
+
+    public void setCheckId(long checkId) {
+        this.checkId = checkId;
+    }
 
     public String getCheckTime() {
         return checkTime;

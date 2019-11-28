@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,15 +18,25 @@ import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jpeng.android.R;
 import com.jpeng.android.utils.ShareData;
-import com.jpeng.android.utils.system.MainActivity;
+
 
 import java.io.File;
 import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 
 /**
@@ -40,7 +49,10 @@ import java.io.IOException;
 public class UriCheckActivity extends Activity implements View.OnClickListener {
     @SuppressLint("SdCardPath")
     private Dialog mDialog;
-
+    private static final String picPath = "/picFile";
+    private static final String picName = "/result.png";
+    public static String fileName = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + picPath + picName;//图片的路径
+    private static final String baseUrl = "http://120.77.221.43:8082/web/check/addcheckresult";
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     @Override
@@ -54,7 +66,7 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.check);
         //获取从选择家属页面传递的userId
         long userId = ((ShareData) getApplication()).getUserId();
-
+        final long checkId = uploadAndCheck(userId);
         //返回到选择家属页面
         TextView textView = findViewById(R.id.textView8);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +81,8 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //跳转的同时，将处理结果的id传到结果显示页面
+                ((ShareData) getApplication()).setCheckId(checkId);
                 Intent intent = new Intent(UriCheckActivity.this, UriSingleCheckActivity.class);//从Activity跳转到Activity
                 startActivity(intent);
             }
@@ -130,20 +144,11 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
             String state = Environment.getExternalStorageState();
             if (!state.equals(Environment.MEDIA_MOUNTED)) return;
             // 把原图显示到界面上
-            View view = findViewById(R.id.imageView);
-            view.setBackgroundDrawable(new BitmapDrawable(readpic()));
-            view.animate().rotation(90);
-            try {
-                // 保存缩略图
-                writeFile(data);
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            ImageView view = findViewById(R.id.imageView);
+            view.setImageBitmap((readpic()));
         }
     }
 
-    //监听按钮的事件，当我们按下camera_btn按钮时就会触发此事件
     @Override
     public void onClick(View arg0) {
         switch (arg0.getId()) {
@@ -151,17 +156,20 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
                 try {
                     buttonClick();
                 } catch (IOException e) {
-                    // TODO Auto-generated catch block
+
                     e.printStackTrace();
                 }
                 break;
             default:
                 break;
-
         }
     }
 
-    //当按下了camera_btn按钮后采取的动作
+    /**
+     * 当按下了camera_btn按钮后采取的动作
+     *
+     * @throws IOException
+     */
     private void buttonClick() throws IOException {
         Intent intent = new Intent();
         try {
@@ -171,23 +179,33 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
 
         }
         // 获取文件
-        File file = createFileIfNeed("hello.png");
+        File file = createFileIfNeed(picName);
         //拍照后原图回存入此路径下
         intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
         intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 1);
         startActivityForResult(intent, 1);
     }
 
-    // 从保存原图的地址读取图片
+    /**
+     * 从保存原图的地址读取图片
+     *
+     * @return
+     */
     private Bitmap readpic() {
-        String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + "/nbinpic/hello.png";
+        String filePath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + picPath + picName;
         Bitmap bitmap = BitmapFactory.decodeFile(filePath);
         return bitmap;
     }
 
-    // 在sd卡中创建一保存图片（原图和缩略图共用的）文件夹
+    /**
+     * 在sd卡中创建一保存图片（原图和缩略图共用的）文件夹
+     *
+     * @param fileName
+     * @return
+     * @throws IOException
+     */
     private File createFileIfNeed(String fileName) throws IOException {
-        String fileA = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + "/nbinpic";
+        String fileA = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath() + picPath;
         Toast.makeText(this, "请对准试剂条拍照", Toast.LENGTH_SHORT).show();
         File fileJA = new File(fileA);
         if (!fileJA.exists()) {
@@ -200,8 +218,33 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         return file;
     }
 
-    //保存缩略图代码中没用到
-    private void writeFile(Intent data) throws IOException {
+    /**
+     * 上传文件到服务端，同时调用算法
+     *
+     * @param userId 用户的ID
+     * @return 处理结果表中的主键
+     */
+    private long uploadAndCheck(long userId) {
+        long result = 0;
+        MediaType mediaType = MediaType.parse("image/png");
+        MultipartBody multipartBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("userId", String.valueOf(userId))
+                .addFormDataPart("file", fileName, RequestBody.create(mediaType, new File(fileName)))
+                .build();
+        final Request request = new Request.Builder()
+                .url(baseUrl)
+                .post(multipartBody)
+                .build();
+        //构建http请求，并发送同步请求(真是项目中一般是不用的)
+        OkHttpClient okHttpClient = new OkHttpClient();
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            JSONObject jsonObject = JSON.parseObject(response.body().string());
+            result = jsonObject.getLong("resultData");
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return result;
     }
-
 }

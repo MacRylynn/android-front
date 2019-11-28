@@ -130,13 +130,18 @@ public class UriLoginActivity extends Activity {
                         String result = response.body().string();
                         ((ShareData)getApplication()).setAccountId(getAccountId(result));
                         //把传进来的用户数据保存在本地数据库，然后再TestActivity里面获得用户值，然后方便把用户名和检查结果一起上传到后台的数据库
-                        SQLiteDatabase db = dbHelper.getWritableDatabase();//创建或者打开现有的本地数据库
-                        ContentValues values = new ContentValues();
-                        values.put("user_name", account);
-                        values.put("user_id", getAccountId(result));//此ID供以后用
-                        values.put("user_password", password);
-                        db.insert("user_results", null, values);//把用户名保存到本地数据库
-                        Toast.makeText(UriLoginActivity.this, "用户数据保存成功", Toast.LENGTH_SHORT).show();
+                        try {
+                            SQLiteDatabase db = dbHelper.getWritableDatabase();//创建或者打开现有的本地数据库
+                            ContentValues values = new ContentValues();
+                            values.put("user_name", account);
+                            values.put("user_id", getAccountId(result));//此ID供以后用
+                            values.put("user_password", password);
+                            db.insert("user_results", null, values);//把用户名保存到本地数据库
+                            Toast.makeText(UriLoginActivity.this, "用户数据保存成功", Toast.LENGTH_SHORT).show();
+                        }catch (Exception e){
+                            System.out.println(e.toString());
+                        }
+
                         //结束此Activity
                         finish();
                     } else {

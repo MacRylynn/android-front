@@ -2,9 +2,8 @@ package com.jpeng.android.index.logs;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -13,20 +12,17 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.jpeng.android.R;
-import com.jpeng.android.index.check.UriCheckActivity;
-import com.jpeng.android.index.check.UriChooseAimAcyivity;
 import com.jpeng.android.utils.MyDatabaseHelper;
 import com.jpeng.android.utils.ShareData;
 import com.jpeng.android.utils.domain.base.CommonRequest;
-import com.jpeng.android.utils.domain.request.UriAccountInfoReq;
+import com.jpeng.android.utils.domain.request.UriUserInfoReq;
+import com.jpeng.android.utils.domain.response.UriCheckResultVo;
 import com.jpeng.android.utils.domain.response.UriUserInfoVo;
 
-import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -43,25 +39,20 @@ import okhttp3.Response;
 
 public class UriCheckLogsActivity extends Activity {
 
-
-    private MyDatabaseHelper dbHelper;
-    private String results = "检测结果：" + "\n";
-    private boolean isDisplay = true;
+    private static final String baseUrl = "http://120.77.221.43:8082/web/check/selectrecordings";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklogs);
-        //跳转到具体的记录
-        Button btn = findViewById(R.id.button5);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UriCheckLogsActivity.this, UriSingleLogActivity.class);//从Activity跳转到Activity
-                startActivity(intent);
-            }
-        });
-
+        //申明政策允许所有的操作（为了从服务端同步获取信息）
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        //从服务端获取数据
+        long userId = ((ShareData) getApplication()).getUserId();
+        List<UriCheckResultVo> list = getRecords(userId);
+        //创建UI
+        createUI(list);
         //返回家属选择页面
         TextView textView = findViewById(R.id.textView8);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -71,35 +62,91 @@ public class UriCheckLogsActivity extends Activity {
                 startActivity(intent);
             }
         });
-//        dbHelper = new MyDatabaseHelper(this, "user_results.db", null, 1);
-//        final TextView textView = findViewById(R.id.textView2);
-//        Button showRecord = findViewById(R.id.button);
-//        //显示检测记录，防止一直点击多次显示用isDisplay来控制点击次数
-//        showRecord.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                SQLiteDatabase db = dbHelper.getWritableDatabase();
-//                Cursor cursor = db.query("user_results", null, null, null, null, null, null);
-//                if (cursor.moveToFirst()) {
-//                    do {
-//                        String result = cursor.getString(cursor.getColumnIndex("user_result"));
-//                        if (result != null) {
-//                            results = results + result + "\n";
-//                        }
-//                    } while (cursor.moveToNext());
-//                }
-//                if (isDisplay) {
-//                    if (!Objects.equals(results, "检测结果：" + "\n")) {
-//                        textView.setText(results);
-//                        isDisplay = false;
-//                    } else {
-//                        Toast.makeText(UriCheckLogsActivity.this, "您还没有记录,请开启检测", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//                cursor.close();
-//            }
-//        });
     }
 
+    /**
+     * 根据userId查询检测记录
+     *
+     * @param userId
+     * @return
+     */
+    private List<UriCheckResultVo> getRecords(long userId) {
+        List<UriCheckResultVo> list = new ArrayList<>();
+        MediaType mediaType = MediaType.parse("application/json");
+        UriUserInfoReq uriUserInfoReq = new UriUserInfoReq();
+        uriUserInfoReq.setId(userId);
+        CommonRequest<UriUserInfoReq> commonRequest = new CommonRequest<>();
+        commonRequest.setRequestData(uriUserInfoReq);
+        final Request request = new Request.Builder()
+                .url(baseUrl)
+                .post(RequestBody.create(mediaType, JSON.toJSONString(commonRequest)))
+                .build();
+        //构建http请求，并发送同步请求(真是项目中一般是不用的)
+        OkHttpClient okHttpClient = new OkHttpClient();
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            list = selectCheckRecords(response.body().string());
+        } catch (Exception e) {
+            Toast.makeText(UriCheckLogsActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+        }
+        for (UriCheckResultVo uriCheckResultVo : list) {
+            System.out.println(uriCheckResultVo.toString());
+        }
+        return list;
+    }
 
+    /**
+     * 将Response 转为结果
+     *
+     * @param response
+     * @return
+     */
+    private List<UriCheckResultVo> selectCheckRecords(String response) {
+        List<UriCheckResultVo> resList = new ArrayList<>();
+        JSONArray jsonArray = JSON.parseArray(JSON.parseObject(response).getString("resultData"));
+        if (jsonArray == null || jsonArray.size() <= 0) {
+            System.out.println("数据返回失败或者没有记录！");
+            return resList;
+        }
+        for (int i = 0; i < jsonArray.size(); i++) {
+            UriCheckResultVo uriCheckResultVo = new UriCheckResultVo();
+            uriCheckResultVo.setCheckResult(jsonArray.getJSONObject(i).getString("checkResult"));
+            uriCheckResultVo.setCheckTime(jsonArray.getJSONObject(i).getDate("checkTime"));
+            uriCheckResultVo.setId(jsonArray.getJSONObject(i).getLong("id"));
+            uriCheckResultVo.setResultImagePath(jsonArray.getJSONObject(i).getString("resultImagePath"));
+            uriCheckResultVo.setUserId(jsonArray.getJSONObject(i).getLong("userId"));
+            resList.add(uriCheckResultVo);
+        }
+        return resList;
+    }
+
+    /**
+     * 根据记录数创建UI
+     *
+     * @param list
+     */
+    private void createUI(List<UriCheckResultVo> list) {
+        LinearLayout linearLayout = findViewById(R.id.line1);
+        for (final UriCheckResultVo uriCheckResultVo : list) {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            String time = format.format(uriCheckResultVo.getCheckTime());
+            Button button = new Button(UriCheckLogsActivity.this);
+            button.setWidth(200);
+            button.setHeight(20);
+            button.setTextSize(15);
+            button.setText(time + "   " + uriCheckResultVo.getCheckResult());
+            //跳转到检测页面
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // userId在哪里用，就要在哪里更新，而accountId全局只有一个
+                    ((ShareData) getApplication()).setCheckResult(uriCheckResultVo.getCheckResult());
+                    //从Activity跳转到Activity
+                    Intent intent = new Intent(UriCheckLogsActivity.this, UriSingleLogActivity.class);
+                    startActivity(intent);
+                }
+            });
+            linearLayout.addView(button);
+        }
+    }
 }

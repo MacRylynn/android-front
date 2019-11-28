@@ -90,7 +90,7 @@ public class UriChoosePersonAvtivity extends Activity {
         OkHttpClient okHttpClient = new OkHttpClient();
         try {
             Response response = okHttpClient.newCall(request).execute();
-            return getUserList(response.body().string());
+            list = getUserList(response.body().string());
         } catch (Exception e) {
             Toast.makeText(UriChoosePersonAvtivity.this, e.toString(), Toast.LENGTH_LONG).show();
         }
@@ -133,14 +133,12 @@ public class UriChoosePersonAvtivity extends Activity {
      * @param list
      */
     private void createUI(List<UriUserInfoVo> list) {
-        LinearLayout elLayout = findViewById(R.id.line1);
+        LinearLayout linearLayout = findViewById(R.id.line1);
         for (final UriUserInfoVo user : list) {
-            System.out.println(list.size());
             Button button = new Button(UriChoosePersonAvtivity.this);
             button.setWidth(200);
             button.setHeight(20);
             button.setTextSize(15);
-            button.setText(user.getRelationType() + "   " + user.getUserName());
             button.setText(user.getRelationType() + "   " + user.getUserName());
             //跳转到检测页面
             button.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +150,7 @@ public class UriChoosePersonAvtivity extends Activity {
                     startActivity(intent);
                 }
             });
-            elLayout.addView(button);
+            linearLayout.addView(button);
         }
     }
 }

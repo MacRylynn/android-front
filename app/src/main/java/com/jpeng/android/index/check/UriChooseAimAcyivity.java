@@ -145,9 +145,8 @@ public class UriChooseAimAcyivity extends Activity {
      * @param list
      */
     private void createUI(List<UriUserInfoVo> list) {
-        LinearLayout elLayout = (LinearLayout) findViewById(R.id.line1);
-        for (int i=0;i<5;i++){
-        for (UriUserInfoVo user : list) {
+        LinearLayout elLayout = findViewById(R.id.line1);
+        for (final UriUserInfoVo user : list) {
             System.out.println(list.size());
             Button button = new Button(UriChooseAimAcyivity.this);
             button.setWidth(200);
@@ -159,13 +158,14 @@ public class UriChooseAimAcyivity extends Activity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //TODO userId在哪里用，就要在哪里更新，而accountId全局只有一个
+                    // userId在哪里用，就要在哪里更新，而accountId全局只有一个
+                    ((ShareData) getApplication()).setUserId(user.getId());
                     Intent intent = new Intent(UriChooseAimAcyivity.this, UriCheckActivity.class);//从Activity跳转到Activity
                     startActivity(intent);
                 }
             });
             elLayout.addView(button);
-        }}
+        }
     }
 
 }

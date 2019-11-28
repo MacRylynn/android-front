@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jpeng.android.R;
+import com.jpeng.android.utils.ShareData;
 import com.jpeng.android.utils.system.MainActivity;
 
 import java.io.File;
@@ -51,6 +52,9 @@ public class UriCheckActivity extends Activity implements View.OnClickListener {
         builder.detectFileUriExposure();
         //和界面连接
         setContentView(R.layout.check);
+        //获取从选择家属页面传递的userId
+        long userId = ((ShareData) getApplication()).getUserId();
+
         //返回到选择家属页面
         TextView textView = findViewById(R.id.textView8);
         textView.setOnClickListener(new View.OnClickListener() {

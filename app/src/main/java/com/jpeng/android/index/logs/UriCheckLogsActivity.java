@@ -7,13 +7,32 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.jpeng.android.R;
+import com.jpeng.android.index.check.UriCheckActivity;
+import com.jpeng.android.index.check.UriChooseAimAcyivity;
 import com.jpeng.android.utils.MyDatabaseHelper;
+import com.jpeng.android.utils.ShareData;
+import com.jpeng.android.utils.domain.base.CommonRequest;
+import com.jpeng.android.utils.domain.request.UriAccountInfoReq;
+import com.jpeng.android.utils.domain.response.UriUserInfoVo;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * @ClassName UriSingleLogActivity
@@ -23,6 +42,8 @@ import java.util.Objects;
  */
 
 public class UriCheckLogsActivity extends Activity {
+
+
     private MyDatabaseHelper dbHelper;
     private String results = "检测结果：" + "\n";
     private boolean isDisplay = true;
@@ -79,4 +100,6 @@ public class UriCheckLogsActivity extends Activity {
 //            }
 //        });
     }
+
+
 }

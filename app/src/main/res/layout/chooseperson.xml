@@ -69,15 +69,6 @@
             android:src="@drawable/head" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/choose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="127dp"
-        android:text="模拟检测人员" />
-
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
@@ -89,6 +80,16 @@
         android:text=" @copyright 2019 MMLB"
         android:textAlignment="center"
         android:textSize="15sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110sp">
 
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </RelativeLayout>

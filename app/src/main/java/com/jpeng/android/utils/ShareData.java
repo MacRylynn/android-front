@@ -13,6 +13,15 @@ public class ShareData extends Application {
     private long userId;
     private String userCode;
     private String checkResult;
+    private String checkTime;
+
+    public String getCheckTime() {
+        return checkTime;
+    }
+
+    public void setCheckTime(String checkTime) {
+        this.checkTime = checkTime;
+    }
 
     public String getCheckResult() {
         return checkResult;

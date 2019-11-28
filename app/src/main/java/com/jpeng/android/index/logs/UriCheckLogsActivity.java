@@ -129,7 +129,7 @@ public class UriCheckLogsActivity extends Activity {
         LinearLayout linearLayout = findViewById(R.id.line1);
         for (final UriCheckResultVo uriCheckResultVo : list) {
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            String time = format.format(uriCheckResultVo.getCheckTime());
+            final String time = format.format(uriCheckResultVo.getCheckTime());
             Button button = new Button(UriCheckLogsActivity.this);
             button.setWidth(200);
             button.setHeight(20);
@@ -139,8 +139,9 @@ public class UriCheckLogsActivity extends Activity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // userId在哪里用，就要在哪里更新，而accountId全局只有一个
+                    // 按钮会将检测结果和检测时间携带到详情记录里面
                     ((ShareData) getApplication()).setCheckResult(uriCheckResultVo.getCheckResult());
+                    ((ShareData) getApplication()).setCheckTime(time);
                     //从Activity跳转到Activity
                     Intent intent = new Intent(UriCheckLogsActivity.this, UriSingleLogActivity.class);
                     startActivity(intent);

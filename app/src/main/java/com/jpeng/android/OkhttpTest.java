@@ -57,14 +57,17 @@ public class OkhttpTest {
 
         //格式化时间
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        for (UriCheckResultVo uriCheckResultVo:list){
-            String time=format.format(uriCheckResultVo.getCheckTime());
-            System.out.println(time+" "+"检测结果："+uriCheckResultVo.getCheckResult());
+        for (UriCheckResultVo uriCheckResultVo : list) {
+            String time = format.format(uriCheckResultVo.getCheckTime());
+            String[] res = getEveryValue(uriCheckResultVo.getCheckResult());
+            for (String s : res) {
+                System.out.print(s + "-");
+            }
+            System.out.println(time + " " + "检测结果：" + uriCheckResultVo.getCheckResult());
         }
 
 
     }
-
 
 
     private static List<UriCheckResultVo> selectCheckRecords(String response) {
@@ -84,5 +87,15 @@ public class OkhttpTest {
             resList.add(uriCheckResultVo);
         }
         return resList;
+    }
+
+
+    private static String[] getEveryValue(String result) {
+        String[] everyValue = new String[12];
+        JSONArray jsonArray = JSON.parseArray(result);
+        for (int i = 0; i < jsonArray.size(); i++) {
+            everyValue[i] = jsonArray.getString(i);
+        }
+        return everyValue;
     }
 }

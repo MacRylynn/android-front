@@ -80,27 +80,53 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TableRow android:layout_marginTop="0sp">
+
                 <TextView android:text="自己" />
-                <ImageView android:src="@drawable/self" />
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:src="@drawable/self" />
+
                 <TextView android:text="父母" />
-                <ImageView android:src="@drawable/parents" />
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:src="@drawable/parents" />
             </TableRow>
+
             <TableRow android:layout_marginTop="20sp">
+
                 <TextView android:text="配偶" />
-                <ImageView android:src="@drawable/wife" />
-                <TextView android:text="兄弟" />
-                <ImageView android:src="@drawable/brother" />
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:src="@drawable/wife" />
+
+                <TextView android:text="亲戚" />
+
+                <ImageView
+                    android:id="@+id/image4"
+                    android:src="@drawable/brother" />
             </TableRow>
+
             <TableRow android:layout_marginTop="20sp">
-                <TextView android:text="姐妹" />
-                <ImageView android:src="@drawable/sister" />
+
                 <TextView android:text="子女" />
-                <ImageView android:src="@drawable/children" />
+
+                <ImageView
+                    android:id="@+id/image5"
+                    android:src="@drawable/children" />
+
+                <TextView android:text="其他" />
+
+                <ImageView
+                    android:id="@+id/image6"
+                    android:src="@drawable/sister" />
             </TableRow>
 
         </TableLayout>
-
 
 
     </RelativeLayout>
@@ -110,8 +136,8 @@
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="30sp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:layout_gravity="center_horizontal"
         android:singleLine="false"
         android:text=" @copyright 2019 MMLB"

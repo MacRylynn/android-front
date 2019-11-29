@@ -3,6 +3,7 @@ package com.jpeng.android.setting;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +40,9 @@ public class UriMemberActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.membersetting);
+        //申明政策允许所有的操作（为了从服务端同步获取信息）
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         final String userCode = ((ShareData) getApplication()).getUserCode();
         final String relationType = ((ShareData) getApplication()).getRelationType();
         //返回上一页

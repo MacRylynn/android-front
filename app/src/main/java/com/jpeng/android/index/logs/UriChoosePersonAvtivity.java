@@ -16,6 +16,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.jpeng.android.R;
 import com.jpeng.android.index.check.UriCheckActivity;
 import com.jpeng.android.index.check.UriChooseAimAcyivity;
+import com.jpeng.android.utils.RelationTypeEnum;
 import com.jpeng.android.utils.ShareData;
 import com.jpeng.android.utils.domain.base.CommonRequest;
 import com.jpeng.android.utils.domain.request.UriAccountInfoReq;
@@ -139,7 +140,7 @@ public class UriChoosePersonAvtivity extends Activity {
             button.setWidth(200);
             button.setHeight(20);
             button.setTextSize(15);
-            button.setText(user.getRelationType() + "   " + user.getUserName());
+            button.setText(RelationTypeEnum.getEnumByCode(user.getRelationType()).getDesc() + "   " + user.getUserName());
             //跳转到检测页面
             button.setOnClickListener(new View.OnClickListener() {
                 @Override

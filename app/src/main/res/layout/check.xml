@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView5"
-            android:text="1. 点击“开启拍摄”拍摄图片然后保存
+            android:text=" 1. 点击“开启拍摄”拍摄图片然后保存\n
 2. 点击“上传检测”后上一步保存的图片会自动上传到服务器然后自动检测"
             android:textSize="12sp" />
     </RelativeLayout>

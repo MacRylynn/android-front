@@ -2,6 +2,7 @@ package com.jpeng.android.utils.system;
 
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,9 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.VideoView;
 
 
 import com.jpeng.android.R;
@@ -26,33 +30,23 @@ import com.jpeng.jptabbar.animate.AnimationType;
 public class Tab2Pager extends Fragment {
     //使用教程的视频地址
     private String videopPath = "https://v.youku.com/v_show/id_XMzY2MTYyMDYwMA==.html?spm=a2hzp.8244740.0.0";
-    private  WebView webview;
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.tutorial, null);
         init(layout);
-        webview = (layout).findViewById(R.id.webView);
-        WebView startPlay = (layout).findViewById(R.id.webView);
-        startPlay.setOnClickListener(new View.OnClickListener() {
+        final ImageView imageView=(layout).findViewById(R.id.start);
+        final VideoView videoView = (layout).findViewById(R.id.webView);
+        //开始播放视频
+        videoView.setVideoURI(Uri.parse(videopPath));
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WebSettings ws = webview.getSettings();
-                ws.setBuiltInZoomControls(true);// 隐藏缩放按钮
-                ws.setUseWideViewPort(true);// 可任意比例缩放
-                ws.setLoadWithOverviewMode(true);// setUseWideViewPort方法设置webview推荐使用的窗口。
-                // setLoadWithOverviewMode方法是设置webview加载的页面的模式。
-                ws.setSavePassword(true);
-                ws.setSaveFormData(true);// 保存表单数据
-                ws.setJavaScriptEnabled(true);
-                ws.setDomStorageEnabled(true);
-                ws.setSupportMultipleWindows(true);
-                webview.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-                webview.setWebChromeClient(new WebChromeClient());
-                webview.setWebViewClient(new WebViewClient());
-                webview.loadUrl(videopPath);
+                imageView.setVisibility(View.GONE);
+                videoView.start();
             }
         });
+
         return layout;
     }
 

@@ -62,7 +62,7 @@
             android:textColor="#000"
             android:textSize="22sp" />
 
-        <WebView
+        <VideoView
             android:id="@+id/webView"
             android:layout_width="380sp"
             android:layout_height="250sp"
@@ -72,6 +72,16 @@
             android:clickable="true"
             android:focusable="true" />
 
+        <ImageView
+            android:id="@+id/start"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_below="@+id/textView7"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="95dp"
+            android:src="@drawable/start"
+            android:clickable="true"
+            android:focusable="true" />
 
         <TableLayout
             android:layout_width="330sp"

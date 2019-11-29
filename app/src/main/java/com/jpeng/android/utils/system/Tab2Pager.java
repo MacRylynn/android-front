@@ -45,7 +45,7 @@ public class Tab2Pager extends Fragment {
             @Override
             public void onClick(View v) {
                 //让播放的组件消失掉
-                imageView.setVisibility(View.GONE);
+                imageView.setVisibility(View.INVISIBLE);
                 //开始播放视频
                 webView.start();
             }
@@ -66,6 +66,9 @@ public class Tab2Pager extends Fragment {
         JPTabBar mTabBar = ((MainActivity) getActivity()).getTabbar();
         mTabBar.setAnimation(AnimationType.SCALE);
     }
-
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 
 }

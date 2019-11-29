@@ -29,21 +29,25 @@ import com.jpeng.jptabbar.animate.AnimationType;
  */
 public class Tab2Pager extends Fragment {
     //使用教程的视频地址
-    private String videopPath = "https://v.youku.com/v_show/id_XMzY2MTYyMDYwMA==.html?spm=a2hzp.8244740.0.0";
+    private String videopPath = "http://120.77.221.43:8082/vedio/teach.mp4";
+
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.tutorial, null);
         init(layout);
-        final ImageView imageView=(layout).findViewById(R.id.start);
-        final VideoView videoView = (layout).findViewById(R.id.webView);
-        //开始播放视频
-        videoView.setVideoURI(Uri.parse(videopPath));
+        final ImageView imageView = (layout).findViewById(R.id.start);
+        final VideoView webView = (layout).findViewById(R.id.webView);
+        webView.setVideoPath(videopPath);
+        webView.getBufferPercentage();
+        webView.getCurrentPosition();
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //让播放的组件消失掉
                 imageView.setVisibility(View.GONE);
-                videoView.start();
+                //开始播放视频
+                webView.start();
             }
         });
 

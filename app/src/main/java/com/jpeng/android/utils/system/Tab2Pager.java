@@ -30,6 +30,7 @@ import com.jpeng.jptabbar.animate.AnimationType;
 public class Tab2Pager extends Fragment {
     //使用教程的视频地址
     private String videopPath = "http://120.77.221.43:8082/vedio/teach.mp4";
+    private VideoView videoView;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -37,24 +38,24 @@ public class Tab2Pager extends Fragment {
         View layout = inflater.inflate(R.layout.tutorial, null);
         init(layout);
         final ImageView imageView = (layout).findViewById(R.id.start);
-        final VideoView webView = (layout).findViewById(R.id.webView);
-        webView.setVideoPath(videopPath);
-        webView.getBufferPercentage();
-        webView.getCurrentPosition();
+        videoView = (layout).findViewById(R.id.webView);
+        videoView.setVideoPath(videopPath);
+        videoView.getBufferPercentage();
+        videoView.getCurrentPosition();
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //让播放的组件消失掉
                 imageView.setVisibility(View.INVISIBLE);
                 //开始播放视频
-                webView.start();
+                videoView.start();
             }
         });
-        webView.setOnClickListener(new View.OnClickListener() {
+        videoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 imageView.setVisibility(View.VISIBLE);
-                webView.pause();
+                videoView.pause();
             }
         });
 
@@ -66,9 +67,12 @@ public class Tab2Pager extends Fragment {
         JPTabBar mTabBar = ((MainActivity) getActivity()).getTabbar();
         mTabBar.setAnimation(AnimationType.SCALE);
     }
+
     @Override
     public void onPause() {
         super.onPause();
+        videoView.pause();
     }
+
 
 }

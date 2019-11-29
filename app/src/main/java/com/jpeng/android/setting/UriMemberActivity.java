@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -108,13 +109,13 @@ public class UriMemberActivity extends Activity {
     }
 
     private UriUserInfoReq build(String userCode, String relationType) throws ParseException {
-        TextView textView1 = findViewById(R.id.text1);
-        TextView textView2 = findViewById(R.id.text2);
-        TextView textView3 = findViewById(R.id.text3);
-        TextView textView4 = findViewById(R.id.text4);
-        TextView textView5 = findViewById(R.id.text5);
-        TextView textView6 = findViewById(R.id.text6);
-        TextView textView7 = findViewById(R.id.text7);
+        EditText textView1 = findViewById(R.id.text1);
+        EditText textView2 = findViewById(R.id.text2);
+        EditText textView3 = findViewById(R.id.text3);
+        EditText textView4 = findViewById(R.id.text4);
+        EditText textView5 = findViewById(R.id.text5);
+        EditText textView6 = findViewById(R.id.text6);
+        EditText textView7 = findViewById(R.id.text7);
         String time = textView7.getText().toString();
         //格式化时间
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -139,13 +140,13 @@ public class UriMemberActivity extends Activity {
      * 重置界面填写信息
      */
     private void resetInfo() {
-        TextView textView1 = findViewById(R.id.text1);
-        TextView textView2 = findViewById(R.id.text2);
-        TextView textView3 = findViewById(R.id.text3);
-        TextView textView4 = findViewById(R.id.text4);
-        TextView textView5 = findViewById(R.id.text5);
-        TextView textView6 = findViewById(R.id.text6);
-        TextView textView7 = findViewById(R.id.text7);
+        EditText textView1 = findViewById(R.id.text1);
+        EditText textView2 = findViewById(R.id.text2);
+        EditText textView3 = findViewById(R.id.text3);
+        EditText textView4 = findViewById(R.id.text4);
+        EditText textView5 = findViewById(R.id.text5);
+        EditText textView6 = findViewById(R.id.text6);
+        EditText textView7 = findViewById(R.id.text7);
         textView1.setText(" ");
         textView2.setText(" ");
         textView3.setText(" ");

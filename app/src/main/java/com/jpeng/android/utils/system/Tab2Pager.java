@@ -50,6 +50,14 @@ public class Tab2Pager extends Fragment {
                 webView.start();
             }
         });
+        webView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageView.setVisibility(View.VISIBLE);
+                webView.pause();
+            }
+        });
+
 
         return layout;
     }

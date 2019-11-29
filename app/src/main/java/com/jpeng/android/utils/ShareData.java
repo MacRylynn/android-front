@@ -15,6 +15,15 @@ public class ShareData extends Application {
     private long checkId;
     private String checkResult;
     private String checkTime;
+    private String relationType;
+
+    public String getRelationType() {
+        return relationType;
+    }
+
+    public void setRelationType(String relationType) {
+        this.relationType = relationType;
+    }
 
     public long getCheckId() {
         return checkId;

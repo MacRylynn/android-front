@@ -87,12 +87,16 @@
 
                 <ImageView
                     android:id="@+id/image1"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/self" />
 
                 <TextView android:text="父母" />
 
                 <ImageView
                     android:id="@+id/image2"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/parents" />
             </TableRow>
 
@@ -102,12 +106,16 @@
 
                 <ImageView
                     android:id="@+id/image3"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/wife" />
 
                 <TextView android:text="亲戚" />
 
                 <ImageView
                     android:id="@+id/image4"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/brother" />
             </TableRow>
 
@@ -117,12 +125,16 @@
 
                 <ImageView
                     android:id="@+id/image5"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/children" />
 
                 <TextView android:text="其他" />
 
                 <ImageView
                     android:id="@+id/image6"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:src="@drawable/sister" />
             </TableRow>
 

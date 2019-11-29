@@ -98,7 +98,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/textView6"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="使用方式"
             android:textSize="30sp" />
@@ -107,12 +107,10 @@
             android:id="@+id/textView6"
             android:layout_width="320sp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:text="价值观：实现科技创新创业价值最大化
-            使    命：孕育科技产业发展土壤、
-            加速高新技术成果产业、助推地方产业结构转型 。
-            地    址：逸夫楼505      "
+            android:layout_below="@+id/textView5"
+            android:text="1. 点击“开启拍摄”拍摄图片然后保存
+2. 点击“上传检测”后上一步保存的图片会自动上传到服务器然后自动检测"
             android:textSize="12sp" />
     </RelativeLayout>
 

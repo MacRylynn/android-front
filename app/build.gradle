@@ -1,20 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 29
     buildToolsVersion "26.0.2"
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     defaultConfig {
-//        splits {
-//            abi {
-//                enable true
-//                reset()
-//                include 'x86', 'armeabi-v7a', 'x86_64'
-//                universalApk true
-//            }
-//        }
+        splits {
+            abi {
+                enable true
+                reset()
+                include 'x86', 'armeabi-v7a'
+                universalApk true
+            }
+        }
         applicationId "com.jpeng.jptabbar"
         minSdkVersion 23
-        targetSdkVersion 27
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
